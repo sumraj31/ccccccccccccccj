@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2874f0" />
+    <meta name="description" content="AnmolKala online catalog for handmade crafts, gifts, jewellery, personalised products, wall clocks, and home décor with WhatsApp enquiry, secure admin dashboard, and product video uploads." />
+    <link rel="canonical" href="https://anmolkala.in/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AnmolKala" />
+    <meta property="og:url" content="https://anmolkala.in/" />
+    <meta property="og:title" content="AnmolKala — Handmade Art & Crafts" />
+    <meta property="og:description" content="AnmolKala online catalog for handmade crafts, gifts, jewellery, personalised products, wall clocks, and home décor with WhatsApp enquiry, secure admin dashboard, and product video uploads." />
+    <meta property="og:image" content="https://anmolkala.in/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@anmolkala_in" />
+    <meta name="twitter:title" content="AnmolKala — Handmade Art & Crafts" />
+    <meta name="twitter:description" content="AnmolKala online catalog for handmade crafts, gifts, jewellery, personalised products, wall clocks, and home décor with WhatsApp enquiry, secure admin dashboard, and product video uploads." />
+    <meta name="twitter:image" content="https://anmolkala.in/logo.png" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <title>AnmolKala — Handmade Art & Crafts</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "AnmolKala",
+      "image": "https://anmolkala.in/logo.png",
+      "description": "Handmade crafts, personalized gifts, puja thalis, photo frames, resin art clocks and home décor.",
+      "url": "https://anmolkala.in",
+      "telephone": "+919717887313",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://anmolkala.in/catalog?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script>
+      (function() {
+        // AI Studio preview operates in a sandboxed iframe without HMR WebSocket support.
+        // Intercept and suppress unhandled WebSocket connection errors from @vite/client.
+        window.addEventListener('unhandledrejection', function(event) {
+          var reason = event && event.reason;
+          var msg = reason ? (reason.message || reason.stack || String(reason)) : '';
+          if (
+            msg.includes('WebSocket') ||
+            msg.includes('vite-hmr') ||
+            msg.includes('vite-ping') ||
+            msg.includes('@vite/client') ||
+            (reason && reason.stack && reason.stack.includes('@vite/client'))
+          ) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+
+        window.addEventListener('error', function(event) {
+          var msg = (event && (event.message || event.filename)) ? String(event.message || '') : '';
+          if (msg.includes('WebSocket') || (event.filename && event.filename.includes('@vite/client'))) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+
+        // Safe stub for Vite dev HMR websocket
+        if (typeof window !== 'undefined' && window.WebSocket) {
+          var OrigWS = window.WebSocket;
+          function ViteSafeWebSocket(url, protocols) {
+            var isHmr = (protocols === 'vite-hmr' || protocols === 'vite-ping' || (typeof url === 'string' && (url.includes('token=') || url.includes('/@vite/'))));
+            if (!isHmr) {
+              return new OrigWS(url, protocols);
+            }
+            var target = new EventTarget();
+            target.binaryType = 'blob';
+            target.readyState = 1;
+            target.url = url;
+            target.protocol = protocols || '';
+            target.extensions = '';
+            target.bufferedAmount = 0;
+            target.send = function() {};
+            target.close = function() {
+              target.readyState = 3;
+              target.dispatchEvent(new Event('close'));
+            };
+            setTimeout(function() {
+              target.readyState = 1;
+              target.dispatchEvent(new Event('open'));
+            }, 0);
+            return target;
+          }
+          ViteSafeWebSocket.CONNECTING = 0;
+          ViteSafeWebSocket.OPEN = 1;
+          ViteSafeWebSocket.CLOSING = 2;
+          ViteSafeWebSocket.CLOSED = 3;
+          ViteSafeWebSocket.prototype = OrigWS.prototype;
+          window.WebSocket = ViteSafeWebSocket;
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

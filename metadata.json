@@ -1,0 +1,8 @@
+{
+  "name": "AnmolKala — Handmade Art & Crafts",
+  "description": "AnmolKala online catalog for handmade crafts, gifts, jewellery, personalised products, wall clocks, and home décor with WhatsApp enquiry, secure admin dashboard, and product video uploads.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
