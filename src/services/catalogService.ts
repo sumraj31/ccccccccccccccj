@@ -111,17 +111,36 @@ export function subscribeToCategories(_callback: RealtimeChangeCallback<Category
 // -------------------------------------------------------------
 // Products / Store Items Queries & Mutations
 // -------------------------------------------------------------
+export const catalogBroadcast = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('anmolkala_sync') : null;
+
+export function notifyCatalogUpdated() {
+  try {
+    catalogBroadcast?.postMessage({ type: 'CATALOG_MUTATED', timestamp: Date.now() });
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('anmolkala_catalog_mutated'));
+    }
+  } catch (e) {}
+}
+
 export async function fetchProducts(): Promise<StoreItem[]> {
   try {
-    const res = await fetch('/api/products');
+    const res = await fetch(`/api/products?_t=${Date.now()}`, {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+      },
+    });
     if (res.ok) {
       const data = await res.json();
-      if (Array.isArray(data) && data.length > 0) {
+      if (Array.isArray(data)) {
         updateLocalCatalogCache(data);
         return data as StoreItem[];
       }
     }
-  } catch (e) {}
+  } catch (e) {
+    console.warn('[Catalog] Error fetching fresh products:', e);
+  }
   return memoryCatalog.length > 0 ? memoryCatalog : baselineProducts;
 }
 
@@ -157,11 +176,11 @@ export async function saveProduct(item: StoreItem): Promise<StoreItem> {
     });
     if (res.ok) {
       const saved = await res.json();
-      // Update local memory
       const next = memoryCatalog.some((p) => p.id === saved.id)
         ? memoryCatalog.map((p) => (p.id === saved.id ? saved : p))
         : [saved, ...memoryCatalog];
       updateLocalCatalogCache(next);
+      notifyCatalogUpdated();
       return saved;
     }
   } catch (e) {}
@@ -171,6 +190,7 @@ export async function saveProduct(item: StoreItem): Promise<StoreItem> {
     ? memoryCatalog.map((p) => (p.id === cleanItem.id ? cleanItem : p))
     : [cleanItem, ...memoryCatalog];
   updateLocalCatalogCache(next);
+  notifyCatalogUpdated();
   return cleanItem;
 }
 
@@ -182,6 +202,7 @@ export async function deleteProduct(productId: string): Promise<boolean> {
     if (res.ok) {
       const next = memoryCatalog.filter((p) => p.id !== productId);
       updateLocalCatalogCache(next);
+      notifyCatalogUpdated();
       return true;
     }
   } catch (e) {}
@@ -189,6 +210,7 @@ export async function deleteProduct(productId: string): Promise<boolean> {
   // Fallback direct local delete
   const next = memoryCatalog.filter((p) => p.id !== productId);
   updateLocalCatalogCache(next);
+  notifyCatalogUpdated();
   return true;
 }
 
@@ -197,7 +219,13 @@ export async function deleteProduct(productId: string): Promise<boolean> {
 // -------------------------------------------------------------
 export async function fetchCategories(): Promise<CategoryItem[]> {
   try {
-    const res = await fetch('/api/categories');
+    const res = await fetch(`/api/categories?_t=${Date.now()}`, {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+      },
+    });
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) {

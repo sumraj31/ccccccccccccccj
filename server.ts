@@ -176,13 +176,6 @@ function persistCatalogStorage() {
 // -------------------------------------------------------------
 // Real-Time Auto-Connecting Database Layer (DATABASE_URL)
 // -------------------------------------------------------------
-const rawDatabaseUrl =
-  process.env.DATABASE_URL ||
-  process.env.POSTGRES_URL ||
-  process.env.POSTGRES_PRISMA_URL ||
-  process.env.SUPABASE_DB_URL ||
-  '';
-
 let pgPool: pg.Pool | null = null;
 let isDbConnected = false;
 let dbInfo = {
@@ -191,121 +184,95 @@ let dbInfo = {
   error: null as string | null,
 };
 
+let dbInitPromise: Promise<void> | null = null;
+
 async function initDatabase() {
-  if (!rawDatabaseUrl.trim()) {
-    console.log('[Database] No DATABASE_URL provided. Operating smoothly with persistent local catalogue.');
-    return;
-  }
+  // 1. Prioritize Cloud SQL Developer Edition if configured
+  if (process.env.SQL_HOST) {
+    try {
+      console.log('[Database] Connecting to Google Cloud SQL at', process.env.SQL_HOST);
+      pgPool = new Pool({
+        host: process.env.SQL_HOST,
+        user: process.env.SQL_USER,
+        password: process.env.SQL_PASSWORD,
+        database: process.env.SQL_DB_NAME,
+        max: 10,
+        connectionTimeoutMillis: 10000,
+      });
 
-  try {
-    const isLocalhost = rawDatabaseUrl.includes('localhost') || rawDatabaseUrl.includes('127.0.0.1');
-    pgPool = new Pool({
-      connectionString: rawDatabaseUrl,
-      ssl: isLocalhost ? false : { rejectUnauthorized: false },
-      max: 10,
-      connectionTimeoutMillis: 8000,
-    });
+      pgPool.on('error', (err) => {
+        console.warn('[Cloud SQL Pool Warning]:', err.message);
+      });
 
-    pgPool.on('error', (err) => {
-      console.warn('[Database Pool Warning]:', err.message);
-    });
-
-    // Test connection
-    const client = await pgPool.connect();
-    isDbConnected = true;
-    dbInfo = {
-      provider: 'PostgreSQL (Connected via DATABASE_URL)',
-      status: 'connected',
-      error: null,
-    };
-    console.log('[Database] Real-time connection established via DATABASE_URL!');
-
-    // Initialize Schema
-    await client.query(`
-      CREATE TABLE IF NOT EXISTS store_items (
-        id TEXT PRIMARY KEY,
-        type TEXT DEFAULT 'product',
-        name TEXT NOT NULL,
-        category TEXT NOT NULL,
-        slug TEXT NOT NULL,
-        description TEXT,
-        image_url TEXT,
-        video_url TEXT,
-        tags TEXT,
-        published BOOLEAN DEFAULT true,
-        availability TEXT DEFAULT 'in_stock',
-        created_at TIMESTAMPTZ DEFAULT NOW(),
-        updated_at TIMESTAMPTZ DEFAULT NOW()
-      );
-
-      CREATE TABLE IF NOT EXISTS categories (
-        id TEXT PRIMARY KEY,
-        name TEXT NOT NULL UNIQUE,
-        display_order INT DEFAULT 0,
-        created_at TIMESTAMPTZ DEFAULT NOW(),
-        updated_at TIMESTAMPTZ DEFAULT NOW()
-      );
-
-      CREATE TABLE IF NOT EXISTS product_media (
-        id TEXT PRIMARY KEY,
-        product_id TEXT,
-        storage_path TEXT NOT NULL,
-        media_type TEXT DEFAULT 'image',
-        file_name TEXT,
-        file_size BIGINT DEFAULT 0,
-        mime_type TEXT,
-        display_order INT DEFAULT 0,
-        created_at TIMESTAMPTZ DEFAULT NOW()
-      );
-    `);
-
-    // Check if store_items has data; if empty, auto-seed with preserved 174 products
-    const countRes = await client.query('SELECT COUNT(*) FROM store_items;');
-    const currentCount = parseInt(countRes.rows[0].count, 10);
-    if (currentCount === 0) {
-      console.log('[Database] Empty database detected. Auto-seeding 174 handcrafted products...');
-      const baseline = catalogData.products.length > 0 ? catalogData.products : getBaselineProducts();
-      for (const p of baseline) {
-        await client.query(
-          `INSERT INTO store_items (id, type, name, category, slug, description, image_url, video_url, tags, published, availability, created_at, updated_at)
-           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
-           ON CONFLICT (id) DO UPDATE SET
-             name = EXCLUDED.name,
-             category = EXCLUDED.category,
-             updated_at = NOW();`,
-          [
-            p.id,
-            p.type || 'product',
-            p.name,
-            p.category || 'Puja Thali',
-            p.slug,
-            p.description || '',
-            p.image_url || '/logo.png',
-            p.video_url || '',
-            p.tags || '',
-            p.published !== false,
-            p.availability || 'in_stock',
-            p.created_at || new Date().toISOString(),
-            p.updated_at || new Date().toISOString(),
-          ]
-        );
-      }
-      console.log('[Database] 174 products seeded successfully into PostgreSQL!');
+      const client = await pgPool.connect();
+      isDbConnected = true;
+      dbInfo = {
+        provider: 'Google Cloud SQL (Connected)',
+        status: 'connected',
+        error: null,
+      };
+      console.log('[Database] Real-time connection established via Google Cloud SQL!');
+      client.release();
+      return;
+    } catch (err: any) {
+      console.warn('[Cloud SQL Connection Failed, falling back to external/local]:', err?.message);
     }
-
-    client.release();
-  } catch (err: any) {
-    console.warn('[Database Connection Failed]:', err?.message);
-    isDbConnected = false;
-    dbInfo = {
-      provider: 'Local Storage (DATABASE_URL connection failed, using local storage)',
-      status: 'fallback',
-      error: err?.message || 'Connection failed',
-    };
   }
+
+  // 2. Next try raw DATABASE_URL (e.g. Supabase or external PostgreSQL)
+  const rawDatabaseUrl =
+    process.env.DATABASE_URL ||
+    process.env.POSTGRES_URL ||
+    process.env.POSTGRES_PRISMA_URL ||
+    process.env.SUPABASE_DB_URL ||
+    '';
+
+  if (rawDatabaseUrl.trim()) {
+    try {
+      const isLocalhost = rawDatabaseUrl.includes('localhost') || rawDatabaseUrl.includes('127.0.0.1');
+      pgPool = new Pool({
+        connectionString: rawDatabaseUrl,
+        ssl: isLocalhost ? false : { rejectUnauthorized: false },
+        max: 10,
+        connectionTimeoutMillis: 8000,
+      });
+
+      pgPool.on('error', (err) => {
+        console.warn('[Database Pool Warning]:', err.message);
+      });
+
+      const client = await pgPool.connect();
+      isDbConnected = true;
+      dbInfo = {
+        provider: 'PostgreSQL (Connected via DATABASE_URL)',
+        status: 'connected',
+        error: null,
+      };
+      console.log('[Database] Real-time connection established via DATABASE_URL!');
+      client.release();
+      return;
+    } catch (err: any) {
+      console.warn('[Database Connection Failed]:', err?.message);
+    }
+  }
+
+  isDbConnected = false;
+  dbInfo = {
+    provider: 'Local Storage (Operating smoothly with persistent local catalogue)',
+    status: 'local',
+    error: null,
+  };
 }
 
-initDatabase();
+dbInitPromise = initDatabase();
+
+async function ensureDatabase() {
+  if (dbInitPromise) {
+    try {
+      await dbInitPromise;
+    } catch (e) {}
+  }
+}
 
 // -------------------------------------------------------------
 // Session & Auth Utilities
@@ -342,6 +309,18 @@ export const app = express();
 app.use(cors());
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
+
+// Anti-Cache & DB synchronization middleware for all API requests
+app.use(async (req: Request, res: Response, next: NextFunction) => {
+  if (req.url.startsWith('/api') || req.url.startsWith('/products') || req.url.startsWith('/categories')) {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    res.setHeader('Surrogate-Control', 'no-store');
+  }
+  await ensureDatabase();
+  next();
+});
 
 // Path Normalization for serverless deployment
 app.use((req: Request, _res: Response, next: NextFunction) => {
@@ -490,9 +469,7 @@ app.get('/api/products', async (req: Request, res: Response) => {
       query += ' ORDER BY created_at DESC;';
 
       const dbRes = await pgPool.query(query, values);
-      if (dbRes.rows.length > 0) {
-        return res.json(dbRes.rows);
-      }
+      return res.json(dbRes.rows);
     } catch (e) {
       console.warn('[Database Query Error, falling back to local]:', e);
     }

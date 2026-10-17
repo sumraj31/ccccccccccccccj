@@ -29,6 +29,7 @@ import {
   subscribeToCategories,
   cleanLegacyStorage,
   baselineProducts,
+  catalogBroadcast,
 } from './services/catalogService';
 
 const STORAGE_KEYS = {
@@ -117,8 +118,19 @@ export const App: React.FC = () => {
     loadStorage<string[]>(STORAGE_KEYS.RECENT, [])
   );
 
-  // Products initialized with preserved handcrafted catalog
-  const [products, setProducts] = useState<StoreItem[]>(() => baselineProducts);
+  // Products initialized with cached catalog or baseline handcrafted catalog
+  const [products, setProducts] = useState<StoreItem[]>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const raw = localStorage.getItem('anmolkala_active_catalog');
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch (e) {}
+    }
+    return baselineProducts;
+  });
   const [dbCategories, setDbCategories] = useState<CategoryItem[]>([]);
   const [isCatalogLoading, setIsCatalogLoading] = useState<boolean>(false);
 
@@ -394,7 +406,7 @@ export const App: React.FC = () => {
       fetchCategories().then((cats) => setDbCategories(cats));
     });
 
-    // 4. Handle reconnection and tab visibility
+    // 4. Handle reconnection, tab visibility, polling, and broadcast sync
     const handleReconnection = () => {
       refreshProducts();
     };
@@ -408,9 +420,24 @@ export const App: React.FC = () => {
     };
     document.addEventListener('visibilitychange', handleVisibility);
 
+    // Active 10-second polling to ensure all devices/visitors see deletions within seconds
+    const pollInterval = setInterval(() => {
+      refreshProducts();
+    }, 10000);
+
+    // Cross-tab/window instantaneous broadcast sync
+    const handleBroadcast = () => {
+      refreshProducts();
+    };
+    catalogBroadcast?.addEventListener('message', handleBroadcast);
+    window.addEventListener('anmolkala_catalog_mutated', handleBroadcast);
+
     return () => {
       unsubProducts();
       unsubCategories();
+      clearInterval(pollInterval);
+      catalogBroadcast?.removeEventListener('message', handleBroadcast);
+      window.removeEventListener('anmolkala_catalog_mutated', handleBroadcast);
       window.removeEventListener('online', handleReconnection);
       window.removeEventListener('focus', handleReconnection);
       document.removeEventListener('visibilitychange', handleVisibility);

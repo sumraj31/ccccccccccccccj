@@ -197,23 +197,23 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     loadData(true);
   }, []);
 
-  // Catalogue Aggregate Counts (never default to false 0 when loading)
+  // Catalogue Aggregate Counts (authoritative live count)
   const isCountsLoading = isInitialLoading || (loading && products.length === 0);
   const totalProducts = isCountsLoading
     ? null
-    : (products.length || 174);
+    : products.length;
   const publishedProducts = isCountsLoading
     ? null
-    : (products.filter((p) => p.published !== false).length || 174);
+    : products.filter((p) => p.published !== false).length;
   const totalPhotos = isCountsLoading
     ? null
-    : (mediaList.filter((m) => m.media_type === 'image').length || products.length || 174);
+    : (mediaList.filter((m) => m.media_type === 'image').length || products.length);
   const totalVideos = isCountsLoading
     ? null
-    : (products.filter((p) => Boolean(p.video_url)).length || 4);
+    : products.filter((p) => Boolean(p.video_url)).length;
   const totalCategories = isCountsLoading
     ? null
-    : (categories.length || 11);
+    : categories.length;
 
   // Filtered products in Manage Products
   const filteredProducts = useMemo(() => {

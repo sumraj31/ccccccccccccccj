@@ -1,21 +1,6 @@
 {
   "products": [
     {
-      "id": "AK-001",
-      "type": "product",
-      "name": "Orange Floral Puja Thali",
-      "category": "Puja Thali",
-      "slug": "orange-floral-puja-thali-ak-001",
-      "description": "Round decorative puja thali with an orange-toned center, floral detailing and diya holders around the rim.",
-      "image_url": "/products/p001.webp",
-      "video_url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-      "tags": "puja pooja thali aarti पूजा पूजा थाली orange floral puja thali",
-      "published": true,
-      "availability": "in_stock",
-      "created_at": "2026-10-16T19:33:16.038Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
       "id": "AK-002",
       "type": "product",
       "name": "Purple Floral Puja Thali",
@@ -27,8 +12,8 @@
       "tags": "puja pooja thali aarti पूजा पूजा थाली purple floral puja thali",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:32:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-003",
@@ -42,8 +27,8 @@
       "tags": "puja pooja thali aarti पूजा पूजा थाली white floral puja thali",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:31:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-004",
@@ -57,8 +42,8 @@
       "tags": "puja pooja thali aarti पूजा पूजा थाली teal gold puja thali",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:30:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-005",
@@ -72,23 +57,8 @@
       "tags": "puja pooja thali aarti पूजा पूजा थाली pink floral puja thali",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:29:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "AK-006",
-      "type": "product",
-      "name": "Floral Border Photo Frame",
-      "category": "Photo Frames",
-      "slug": "floral-border-photo-frame-ak-006",
-      "description": "Decorative photo frame featuring a photo presentation with floral and embellished detailing visible in the image.",
-      "image_url": "/products/p006.webp",
-      "video_url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-      "tags": "photo frame photoframe picture frame memory wedding personalized photo frame floral border photo frame",
-      "published": true,
-      "availability": "in_stock",
-      "created_at": "2026-10-16T19:28:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-007",
@@ -102,8 +72,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame decorative portrait photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:27:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-008",
@@ -117,8 +87,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo floral memory photo frame gold detail",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:26:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-009",
@@ -132,8 +102,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame customized couple photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:25:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-010",
@@ -147,8 +117,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame gold floral photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:24:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-011",
@@ -162,8 +132,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame decorative gold floral photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:23:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-012",
@@ -177,8 +147,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame floral portrait photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:22:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-013",
@@ -192,8 +162,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame multi photo collage frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:21:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-014",
@@ -207,8 +177,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame wedding photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:20:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-015",
@@ -222,8 +192,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame floral memory photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:19:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-016",
@@ -237,8 +207,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame couple photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:18:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-017",
@@ -252,8 +222,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame decorative portrait frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:17:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-018",
@@ -267,8 +237,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame personalized couple photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:16:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-019",
@@ -282,8 +252,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame floral couple photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:15:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-020",
@@ -297,8 +267,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame family photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:14:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-021",
@@ -312,8 +282,23 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame decorative photo collage",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:13:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
+    },
+    {
+      "id": "AK-006",
+      "type": "product",
+      "name": "Floral Border Photo Frame",
+      "category": "Photo Frames",
+      "slug": "floral-border-photo-frame-ak-006",
+      "description": "Decorative photo frame featuring a photo presentation with floral and embellished detailing visible in the image.",
+      "image_url": "/products/p006.webp",
+      "video_url": "",
+      "tags": "photo frame photoframe picture frame memory wedding personalized photo frame floral border photo frame",
+      "published": true,
+      "availability": "in_stock",
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T09:03:45.926Z"
     },
     {
       "id": "AK-022",
@@ -327,8 +312,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame personalized portrait frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:12:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-023",
@@ -342,8 +327,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame floral multi photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:11:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-024",
@@ -357,8 +342,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame memory photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:10:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-025",
@@ -372,8 +357,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame decorative couple frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:09:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-026",
@@ -387,8 +372,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame personalized wedding photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:08:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-027",
@@ -402,8 +387,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame family memory frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:07:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-028",
@@ -417,8 +402,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame floral couple memory frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:06:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-029",
@@ -432,8 +417,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame decorative couple photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:05:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-030",
@@ -447,8 +432,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame personalized couple frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:04:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-031",
@@ -462,23 +447,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame illuminated wedding photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:03:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "AK-032",
-      "type": "product",
-      "name": "Round Personalized Wall Clock",
-      "category": "Wall Clocks",
-      "slug": "round-personalized-wall-clock-ak-032",
-      "description": "Round decorative wall clock with a visible clock face and distinctive colour or pattern shown in the image.",
-      "image_url": "/products/p032.webp",
-      "video_url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-      "tags": "wall clock clock clocks ghadi घड़ी round personalized wall clock",
-      "published": true,
-      "availability": "in_stock",
-      "created_at": "2026-10-16T19:02:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-033",
@@ -492,8 +462,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी gold rim round wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:01:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-034",
@@ -507,8 +477,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी marble pattern wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T19:00:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-035",
@@ -522,8 +492,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी grey marble wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:59:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-036",
@@ -537,8 +507,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी gold ring abstract wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:58:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-037",
@@ -552,8 +522,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी geometric square wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:57:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-038",
@@ -567,8 +537,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी white sculpted wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:56:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-039",
@@ -582,8 +552,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी black gold wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:55:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-040",
@@ -597,8 +567,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी white floral wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:54:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-041",
@@ -612,8 +582,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी gold accent wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:53:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-042",
@@ -627,8 +597,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी ornate marble wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:52:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-043",
@@ -642,8 +612,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी grey gold wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:51:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-044",
@@ -657,8 +627,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी grey gold rim wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:50:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-045",
@@ -672,8 +642,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी handmade style grey wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:49:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-046",
@@ -687,8 +657,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी black gold pattern wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:48:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-047",
@@ -702,8 +672,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी white leaf design wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:47:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-048",
@@ -717,8 +687,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी grey textured wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:46:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-049",
@@ -732,8 +702,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी blue floral wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:45:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-050",
@@ -747,8 +717,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी teal gold decorative wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:44:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-051",
@@ -762,8 +732,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी white grey abstract wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:43:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-052",
@@ -777,8 +747,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी black white abstract wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:42:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-053",
@@ -792,8 +762,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी green marble pattern wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:41:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-054",
@@ -807,8 +777,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी floral gold rim wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:40:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-055",
@@ -822,8 +792,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी black white landscape wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:39:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-056",
@@ -837,8 +807,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी personalized photo wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:38:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-057",
@@ -852,8 +822,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी white grey marble pattern wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:37:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-058",
@@ -867,8 +837,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी decorative wall clock on stand",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:36:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-059",
@@ -882,8 +852,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी white grey round wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:35:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-060",
@@ -897,23 +867,8 @@
       "tags": "wall clock clock clocks ghadi घड़ी grey floral accent wall clock",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:34:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "AK-061",
-      "type": "product",
-      "name": "Black Decorative Tray",
-      "category": "Tray Sets",
-      "slug": "black-decorative-tray-ak-061",
-      "description": "Decorative tray or tray set shown with its visible shape, pattern and embellishment.",
-      "image_url": "/products/p061.webp",
-      "video_url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4",
-      "tags": "tray tray set serving decorative black decorative tray",
-      "published": true,
-      "availability": "in_stock",
-      "created_at": "2026-10-16T18:33:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-062",
@@ -927,8 +882,8 @@
       "tags": "tray tray set serving decorative long decorative tray",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:32:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-063",
@@ -942,8 +897,8 @@
       "tags": "tray tray set serving decorative multi piece decorative tray set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:31:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-064",
@@ -957,8 +912,8 @@
       "tags": "tray tray set serving decorative black floral tray",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:30:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-065",
@@ -972,8 +927,8 @@
       "tags": "tray tray set serving decorative textured decorative tray",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:29:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-066",
@@ -987,8 +942,8 @@
       "tags": "tray tray set serving decorative floral rectangular tray",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:28:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-067",
@@ -1002,8 +957,8 @@
       "tags": "tray tray set serving decorative floral serving tray",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:27:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-068",
@@ -1017,8 +972,8 @@
       "tags": "tray tray set serving decorative floral decorative tray set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:26:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-069",
@@ -1032,8 +987,8 @@
       "tags": "tray tray set serving decorative decorative tray with raised border",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:25:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-070",
@@ -1047,8 +1002,8 @@
       "tags": "tray tray set serving decorative grey floral tray",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:24:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-071",
@@ -1062,8 +1017,8 @@
       "tags": "tray tray set serving decorative round floral tray",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:23:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-072",
@@ -1077,23 +1032,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set pink floral bracelet set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:22:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "AK-073",
-      "type": "product",
-      "name": "Heart Charm Keychain – Pink Floral",
-      "category": "Keychains & Key Holders",
-      "slug": "heart-charm-keychain-pink-floral-ak-073",
-      "description": "Heart-shaped keychain with a gold-toned key ring and a decorative floral/resin-style charm.",
-      "image_url": "/products/p073.webp",
-      "video_url": "",
-      "tags": "keychain key chain key holder keyring key ring heart charm keychain   pink floral",
-      "published": true,
-      "availability": "in_stock",
-      "created_at": "2026-10-16T18:21:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-074",
@@ -1107,8 +1047,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set black floral drop earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:20:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-075",
@@ -1122,8 +1062,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set yellow petal earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:19:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-076",
@@ -1137,8 +1077,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set heart pendant set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:18:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-077",
@@ -1152,8 +1092,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set green petal drop earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:17:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-078",
@@ -1167,8 +1107,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set purple heart bracelet",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:16:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-079",
@@ -1182,8 +1122,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set blue green bracelet set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:15:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-080",
@@ -1197,8 +1137,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set maroon bangle set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:14:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-081",
@@ -1212,8 +1152,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set round charm bracelet set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:13:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-082",
@@ -1227,8 +1167,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set floral statement earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:12:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-083",
@@ -1242,8 +1182,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set pink drop earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:11:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-084",
@@ -1257,8 +1197,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set black gold statement earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:10:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-085",
@@ -1272,8 +1212,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set blue floral hoop earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:09:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-086",
@@ -1287,8 +1227,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set round floral earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:08:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-087",
@@ -1302,8 +1242,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set geometric floral earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:07:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-088",
@@ -1317,8 +1257,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set assorted earrings collection",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:06:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-089",
@@ -1332,8 +1272,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set green petal earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:05:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-090",
@@ -1347,8 +1287,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set pink floral statement earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:04:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-091",
@@ -1362,8 +1302,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set turquoise heart pendant",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:03:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-092",
@@ -1377,8 +1317,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set yellow floral earring set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:02:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-093",
@@ -1392,8 +1332,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set amber floral earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:01:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-094",
@@ -1407,8 +1347,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set purple floral jewellery set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T18:00:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-095",
@@ -1422,38 +1362,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set blue pendant necklace set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:59:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "AK-096",
-      "type": "product",
-      "name": "Floral Charm Bracelet – Multicolour",
-      "category": "Jewellery",
-      "slug": "floral-charm-bracelet-multicolour-ak-096",
-      "description": "Jewellery piece or set shown in the image, with its visible shape, colours and decorative design.",
-      "image_url": "/products/p096.webp",
-      "video_url": "",
-      "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set floral charm bracelet   multicolour",
-      "published": true,
-      "availability": "in_stock",
-      "created_at": "2026-10-16T17:58:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "AK-097",
-      "type": "product",
-      "name": "Multicolour Bracelet Set – Blue & Pink",
-      "category": "Jewellery",
-      "slug": "multicolour-bracelet-set-blue-pink-ak-097",
-      "description": "Jewellery piece or set shown in the image, with its visible shape, colours and decorative design.",
-      "image_url": "/products/p097.webp",
-      "video_url": "",
-      "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set multicolour bracelet set   blue   pink",
-      "published": true,
-      "availability": "in_stock",
-      "created_at": "2026-10-16T17:57:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-098",
@@ -1467,8 +1377,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set multicolour bracelet set   mixed charms",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:56:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-099",
@@ -1482,8 +1392,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set floral charm bracelet   round petals",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:55:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-100",
@@ -1497,8 +1407,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set floral bangle",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:54:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-101",
@@ -1512,8 +1422,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set floral bangle set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:53:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-102",
@@ -1527,8 +1437,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set purple drop earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:52:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-103",
@@ -1542,8 +1452,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set floral bracelet",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:51:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-104",
@@ -1557,8 +1467,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set pink bangle set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:50:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-105",
@@ -1572,8 +1482,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set blue floral bangle",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:49:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-106",
@@ -1587,8 +1497,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set heart jewellery set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:48:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-107",
@@ -1602,8 +1512,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set blue heart jewellery set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:47:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-108",
@@ -1617,8 +1527,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set colourful drop earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:46:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-109",
@@ -1632,8 +1542,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set floral drop earrings set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:45:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-110",
@@ -1647,8 +1557,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set colourful floral earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:44:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-111",
@@ -1662,8 +1572,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque golden script name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:43:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-112",
@@ -1677,8 +1587,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque round punjabi quote name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:42:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-113",
@@ -1692,8 +1602,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque floral quote name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:41:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-114",
@@ -1707,8 +1617,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque personalized couple name plate   gold border",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:40:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-115",
@@ -1722,8 +1632,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque round punjabi text name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:39:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-116",
@@ -1737,8 +1647,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque twin round quote name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:38:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-117",
@@ -1752,8 +1662,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque framed punjabi name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:37:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-118",
@@ -1767,8 +1677,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque golden script quote name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:36:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-119",
@@ -1782,8 +1692,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque round personalized name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:35:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-120",
@@ -1797,8 +1707,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque black gold punjabi name plate   floral corner",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:34:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-121",
@@ -1812,8 +1722,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque framed punjabi quote name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:33:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-122",
@@ -1827,8 +1737,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque welcome home name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:32:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-123",
@@ -1842,8 +1752,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque golden script welcome name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:31:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-124",
@@ -1857,8 +1767,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque round golden quote name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:30:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-125",
@@ -1872,8 +1782,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque white gold punjabi name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:29:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-126",
@@ -1887,8 +1797,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque black gold quote name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:28:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-127",
@@ -1902,8 +1812,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque floral punjabi name plate   dark panel",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:27:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-128",
@@ -1917,8 +1827,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque black floral quote name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:26:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-129",
@@ -1932,8 +1842,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque white floral quote name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:25:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-130",
@@ -1947,8 +1857,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque black gold punjabi name plate   white border",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:24:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-131",
@@ -1962,8 +1872,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque black gold punjabi name plate   ornate border",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:23:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-132",
@@ -1977,8 +1887,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque gold outline personalized name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:22:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-133",
@@ -1992,8 +1902,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque gold glitter quote name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:21:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-134",
@@ -2007,8 +1917,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque floral punjabi name plate   white panel",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:20:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-135",
@@ -2022,8 +1932,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque personalized couple name plate   blue edge",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:19:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-136",
@@ -2037,8 +1947,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque golden border name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:18:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-137",
@@ -2052,8 +1962,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque personalized couple name plate   gold script",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:17:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-138",
@@ -2067,8 +1977,8 @@
       "tags": "name plate nameplate door sign door plate personalized custom plaque black gold couple name plate",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:16:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-139",
@@ -2082,8 +1992,8 @@
       "tags": "diya candle tea light tealight holder holders double tea light holder",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:15:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-140",
@@ -2097,8 +2007,8 @@
       "tags": "diya candle tea light tealight holder holders resin style tea light holder",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:14:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-141",
@@ -2112,8 +2022,8 @@
       "tags": "diya candle tea light tealight holder holders lotus tea light holder set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:13:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-142",
@@ -2127,8 +2037,8 @@
       "tags": "diya candle tea light tealight holder holders floral tea light holder set   pink flowers",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:12:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-143",
@@ -2142,8 +2052,8 @@
       "tags": "diya candle tea light tealight holder holders floral candle holder pair",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:11:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-144",
@@ -2157,8 +2067,8 @@
       "tags": "diya candle tea light tealight holder holders round floral tea light holder set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:10:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-145",
@@ -2172,8 +2082,8 @@
       "tags": "diya candle tea light tealight holder holders floral tea light holder set   round designs",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:09:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-146",
@@ -2187,8 +2097,8 @@
       "tags": "diya candle tea light tealight holder holders decorative tea light holder set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:08:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-147",
@@ -2202,38 +2112,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set multicolour floral bracelet",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:07:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "AK-148",
-      "type": "product",
-      "name": "Heart Charm Keychain – Rose Petal",
-      "category": "Keychains & Key Holders",
-      "slug": "heart-charm-keychain-rose-petal-ak-148",
-      "description": "Keychain or key holder shown in the image, with its visible shape, colours and decorative details.",
-      "image_url": "/products/p148.webp",
-      "video_url": "",
-      "tags": "keychain key chain key holder keyring key ring heart charm keychain   rose petal",
-      "published": true,
-      "availability": "in_stock",
-      "created_at": "2026-10-16T17:06:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "AK-149",
-      "type": "product",
-      "name": "Resin Alphabet Keychain Set – Multicolour",
-      "category": "Keychains & Key Holders",
-      "slug": "resin-alphabet-keychain-set-multicolour-ak-149",
-      "description": "Keychain or key holder shown in the image, with its visible shape, colours and decorative details.",
-      "image_url": "/products/p149.webp",
-      "video_url": "",
-      "tags": "keychain key chain key holder keyring key ring resin alphabet keychain set   multicolour",
-      "published": true,
-      "availability": "in_stock",
-      "created_at": "2026-10-16T17:05:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-150",
@@ -2247,8 +2127,8 @@
       "tags": "keychain key chain key holder keyring key ring personalized name keychain set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:04:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-151",
@@ -2262,8 +2142,8 @@
       "tags": "keychain key chain key holder keyring key ring resin alphabet keychain set   letter mix",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:03:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-152",
@@ -2277,8 +2157,8 @@
       "tags": "keychain key chain key holder keyring key ring initial keychain",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:02:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-153",
@@ -2292,8 +2172,8 @@
       "tags": "keychain key chain key holder keyring key ring heart charm keychain   floral heart",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:01:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-154",
@@ -2307,8 +2187,8 @@
       "tags": "keychain key chain key holder keyring key ring floral resin keychain",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T17:00:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-155",
@@ -2322,8 +2202,8 @@
       "tags": "keychain key chain key holder keyring key ring floral key holder",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:59:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-156",
@@ -2337,8 +2217,8 @@
       "tags": "keychain key chain key holder keyring key ring floral wall key holder",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:58:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-157",
@@ -2352,8 +2232,8 @@
       "tags": "keychain key chain key holder keyring key ring decorative key holder",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:57:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-158",
@@ -2367,8 +2247,8 @@
       "tags": "jewellery jewelry earring earrings bracelet bangle pendant necklace set pressed flower drop earrings",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:56:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-159",
@@ -2382,8 +2262,8 @@
       "tags": "home decor decoration accent plaque wall art floral floral heart home decor",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:55:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-160",
@@ -2397,8 +2277,8 @@
       "tags": "home decor decoration accent plaque wall art floral decorative quote plaque",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:54:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-161",
@@ -2412,8 +2292,8 @@
       "tags": "product image requires review",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:53:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-162",
@@ -2427,8 +2307,8 @@
       "tags": "tray tray set serving decorative floral decorative tray",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:52:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-163",
@@ -2442,8 +2322,8 @@
       "tags": "home decor decoration accent plaque wall art floral floral circular home decor",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:51:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-164",
@@ -2457,8 +2337,8 @@
       "tags": "tissue tissue holder napkin holder home decor decorative tissue holder",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:50:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-165",
@@ -2472,8 +2352,8 @@
       "tags": "home decor decoration accent plaque wall art floral pressed flower table decor",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:49:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-166",
@@ -2487,8 +2367,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame floral decorative photo frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:48:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-167",
@@ -2502,8 +2382,8 @@
       "tags": "photo frame photoframe picture frame memory wedding personalized photo frame illuminated personalized wedding frame",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:47:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-168",
@@ -2517,8 +2397,8 @@
       "tags": "rakhi rakhri raksha bandhan festival round floral rakhi set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:46:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-169",
@@ -2532,8 +2412,8 @@
       "tags": "rakhi rakhri raksha bandhan festival handmade charm rakhi",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:45:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-170",
@@ -2547,8 +2427,8 @@
       "tags": "rakhi rakhri raksha bandhan festival photo rakhi set   family photos",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:44:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-171",
@@ -2562,8 +2442,8 @@
       "tags": "rakhi rakhri raksha bandhan festival personalized rakhi set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:43:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-172",
@@ -2577,8 +2457,8 @@
       "tags": "rakhi rakhri raksha bandhan festival festive rakhi set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:42:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-173",
@@ -2592,8 +2472,8 @@
       "tags": "rakhi rakhri raksha bandhan festival photo rakhi set   custom photos",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:41:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
     },
     {
       "id": "AK-174",
@@ -2607,1686 +2487,170 @@
       "tags": "rakhi rakhri raksha bandhan festival personalized photo rakhi set",
       "published": true,
       "availability": "in_stock",
-      "created_at": "2026-10-16T16:40:16.039Z",
-      "updated_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T07:26:47.274Z"
+    },
+    {
+      "id": "AK-032",
+      "type": "product",
+      "name": "Round Personalized Wall Clock",
+      "category": "Wall Clocks",
+      "slug": "round-personalized-wall-clock-ak-032",
+      "description": "Round decorative wall clock with a visible clock face and distinctive colour or pattern shown in the image.",
+      "image_url": "/products/p032.webp",
+      "video_url": "",
+      "tags": "wall clock clock clocks ghadi घड़ी round personalized wall clock",
+      "published": true,
+      "availability": "in_stock",
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T09:03:48.767Z"
+    },
+    {
+      "id": "AK-061",
+      "type": "product",
+      "name": "Black Decorative Tray",
+      "category": "Tray Sets",
+      "slug": "black-decorative-tray-ak-061",
+      "description": "Decorative tray or tray set shown with its visible shape, pattern and embellishment.",
+      "image_url": "/products/p061.webp",
+      "video_url": "",
+      "tags": "tray tray set serving decorative black decorative tray",
+      "published": true,
+      "availability": "in_stock",
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T09:03:53.004Z"
+    },
+    {
+      "id": "AK-001",
+      "type": "product",
+      "name": "Orange Floral Puja Thali",
+      "category": "Puja Thali",
+      "slug": "orange-floral-puja-thali-ak-001",
+      "description": "Round decorative puja thali with an orange-toned center, floral detailing and diya holders around the rim.",
+      "image_url": "/products/p001.webp",
+      "video_url": "blob:https://ais-dev-au4wxgrzunm2yh6uflwpqe-942455917759.asia-east1.run.app/58ab9b42-beee-4438-b177-37d86392e38e",
+      "tags": "puja pooja thali aarti  orange floral puja thali",
+      "published": true,
+      "availability": "in_stock",
+      "created_at": "2026-10-15T07:26:47.274Z",
+      "updated_at": "2026-10-15T09:42:37.270Z"
     }
   ],
   "categories": [
     {
-      "id": "cat-1",
-      "name": "Diya & Candle Holders",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "cat-2",
-      "name": "Home Decor",
-      "display_order": 1,
-      "created_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "cat-3",
-      "name": "Home Decor & Tissue Holders",
-      "display_order": 2,
-      "created_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "cat-4",
+      "id": "CAT-1",
       "name": "Jewellery",
-      "display_order": 3,
-      "created_at": "2026-10-16T19:33:16.039Z"
+      "display_order": 0,
+      "created_at": "2026-10-15T07:26:47.551Z",
+      "updated_at": "2026-10-15T07:26:47.551Z"
     },
     {
-      "id": "cat-5",
-      "name": "Keychains & Key Holders",
-      "display_order": 4,
-      "created_at": "2026-10-16T19:33:16.039Z"
+      "id": "CAT-2",
+      "name": "Home Decor & Tissue Holders",
+      "display_order": 1,
+      "created_at": "2026-10-15T07:26:47.668Z",
+      "updated_at": "2026-10-15T07:26:47.668Z"
     },
     {
-      "id": "cat-6",
-      "name": "Personalized Name Plates",
-      "display_order": 5,
-      "created_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "cat-7",
-      "name": "Photo Frames",
-      "display_order": 6,
-      "created_at": "2026-10-16T19:33:16.039Z"
-    },
-    {
-      "id": "cat-8",
+      "id": "CAT-3",
       "name": "Product Image Requires Review",
-      "display_order": 7,
-      "created_at": "2026-10-16T19:33:16.039Z"
+      "display_order": 2,
+      "created_at": "2026-10-15T07:26:47.782Z",
+      "updated_at": "2026-10-15T07:26:47.782Z"
     },
     {
-      "id": "cat-9",
+      "id": "CAT-4",
       "name": "Puja Thali",
-      "display_order": 8,
-      "created_at": "2026-10-16T19:33:16.039Z"
+      "display_order": 3,
+      "created_at": "2026-10-15T07:26:47.897Z",
+      "updated_at": "2026-10-15T07:26:47.897Z"
     },
     {
-      "id": "cat-10",
-      "name": "Rakhi",
-      "display_order": 9,
-      "created_at": "2026-10-16T19:33:16.039Z"
+      "id": "CAT-5",
+      "name": "Diya & Candle Holders",
+      "display_order": 4,
+      "created_at": "2026-10-15T07:26:48.011Z",
+      "updated_at": "2026-10-15T07:26:48.011Z"
     },
     {
-      "id": "cat-11",
+      "id": "CAT-6",
       "name": "Tray Sets",
-      "display_order": 10,
-      "created_at": "2026-10-16T19:33:16.039Z"
+      "display_order": 5,
+      "created_at": "2026-10-15T07:26:48.126Z",
+      "updated_at": "2026-10-15T07:26:48.126Z"
     },
     {
-      "id": "cat-12",
+      "id": "CAT-7",
+      "name": "Personalized Name Plates",
+      "display_order": 6,
+      "created_at": "2026-10-15T07:26:48.241Z",
+      "updated_at": "2026-10-15T07:26:48.241Z"
+    },
+    {
+      "id": "CAT-8",
       "name": "Wall Clocks",
+      "display_order": 7,
+      "created_at": "2026-10-15T07:26:48.356Z",
+      "updated_at": "2026-10-15T07:26:48.356Z"
+    },
+    {
+      "id": "CAT-9",
+      "name": "Photo Frames",
+      "display_order": 8,
+      "created_at": "2026-10-15T07:26:48.471Z",
+      "updated_at": "2026-10-15T07:26:48.471Z"
+    },
+    {
+      "id": "CAT-10",
+      "name": "Keychains & Key Holders",
+      "display_order": 9,
+      "created_at": "2026-10-15T07:26:48.585Z",
+      "updated_at": "2026-10-15T07:26:48.585Z"
+    },
+    {
+      "id": "CAT-11",
+      "name": "Rakhi",
+      "display_order": 10,
+      "created_at": "2026-10-15T07:26:48.699Z",
+      "updated_at": "2026-10-15T07:26:48.699Z"
+    },
+    {
+      "id": "CAT-12",
+      "name": "Home Decor",
       "display_order": 11,
-      "created_at": "2026-10-16T19:33:16.039Z"
+      "created_at": "2026-10-15T07:26:48.814Z",
+      "updated_at": "2026-10-15T07:26:48.814Z"
+    },
+    {
+      "id": "CAT-VIDEOS",
+      "name": "Product Videos",
+      "display_order": 99,
+      "created_at": "2026-10-15T07:26:48.928Z",
+      "updated_at": "2026-10-15T07:26:48.928Z"
     }
   ],
   "media": [
     {
-      "id": "med-img-AK-001",
+      "id": "MED-MV9BJF4S-CUCO",
       "product_id": "AK-001",
-      "storage_path": "/products/p001.webp",
-      "media_type": "image",
-      "file_name": "p001.webp",
+      "storage_path": "blob:https://ais-dev-au4wxgrzunm2yh6uflwpqe-942455917759.asia-east1.run.app/b2a7a7a3-3d54-4142-986a-d8a7966e78af",
+      "media_type": "video",
+      "file_name": "Resin_tray_with_Ganesha_figurine_20261014202146.mov",
+      "file_size": 3363902,
+      "mime_type": "video/quicktime",
       "display_order": 0,
-      "created_at": "2026-10-16T19:33:16.038Z"
+      "created_at": "2026-10-15T09:10:42.494Z"
     },
     {
-      "id": "med-vid-AK-001",
+      "id": "MED-MV9CO9GY-37RR",
       "product_id": "AK-001",
-      "storage_path": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "storage_path": "blob:https://ais-dev-au4wxgrzunm2yh6uflwpqe-942455917759.asia-east1.run.app/58ab9b42-beee-4438-b177-37d86392e38e",
       "media_type": "video",
-      "file_name": "orange-floral-puja-thali-ak-001-video.mp4",
-      "display_order": 1,
-      "created_at": "2026-10-16T19:33:16.038Z"
-    },
-    {
-      "id": "med-img-AK-002",
-      "product_id": "AK-002",
-      "storage_path": "/products/p002.webp",
-      "media_type": "image",
-      "file_name": "p002.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:32:16.039Z"
-    },
-    {
-      "id": "med-img-AK-003",
-      "product_id": "AK-003",
-      "storage_path": "/products/p003.webp",
-      "media_type": "image",
-      "file_name": "p003.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:31:16.039Z"
-    },
-    {
-      "id": "med-img-AK-004",
-      "product_id": "AK-004",
-      "storage_path": "/products/p004.webp",
-      "media_type": "image",
-      "file_name": "p004.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:30:16.039Z"
-    },
-    {
-      "id": "med-img-AK-005",
-      "product_id": "AK-005",
-      "storage_path": "/products/p005.webp",
-      "media_type": "image",
-      "file_name": "p005.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:29:16.039Z"
-    },
-    {
-      "id": "med-img-AK-006",
-      "product_id": "AK-006",
-      "storage_path": "/products/p006.webp",
-      "media_type": "image",
-      "file_name": "p006.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:28:16.039Z"
-    },
-    {
-      "id": "med-vid-AK-006",
-      "product_id": "AK-006",
-      "storage_path": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-      "media_type": "video",
-      "file_name": "floral-border-photo-frame-ak-006-video.mp4",
-      "display_order": 1,
-      "created_at": "2026-10-16T19:28:16.039Z"
-    },
-    {
-      "id": "med-img-AK-007",
-      "product_id": "AK-007",
-      "storage_path": "/products/p007.webp",
-      "media_type": "image",
-      "file_name": "p007.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:27:16.039Z"
-    },
-    {
-      "id": "med-img-AK-008",
-      "product_id": "AK-008",
-      "storage_path": "/products/p008.webp",
-      "media_type": "image",
-      "file_name": "p008.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:26:16.039Z"
-    },
-    {
-      "id": "med-img-AK-009",
-      "product_id": "AK-009",
-      "storage_path": "/products/p009.webp",
-      "media_type": "image",
-      "file_name": "p009.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:25:16.039Z"
-    },
-    {
-      "id": "med-img-AK-010",
-      "product_id": "AK-010",
-      "storage_path": "/products/p010.webp",
-      "media_type": "image",
-      "file_name": "p010.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:24:16.039Z"
-    },
-    {
-      "id": "med-img-AK-011",
-      "product_id": "AK-011",
-      "storage_path": "/products/p011.webp",
-      "media_type": "image",
-      "file_name": "p011.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:23:16.039Z"
-    },
-    {
-      "id": "med-img-AK-012",
-      "product_id": "AK-012",
-      "storage_path": "/products/p012.webp",
-      "media_type": "image",
-      "file_name": "p012.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:22:16.039Z"
-    },
-    {
-      "id": "med-img-AK-013",
-      "product_id": "AK-013",
-      "storage_path": "/products/p013.webp",
-      "media_type": "image",
-      "file_name": "p013.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:21:16.039Z"
-    },
-    {
-      "id": "med-img-AK-014",
-      "product_id": "AK-014",
-      "storage_path": "/products/p014.webp",
-      "media_type": "image",
-      "file_name": "p014.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:20:16.039Z"
-    },
-    {
-      "id": "med-img-AK-015",
-      "product_id": "AK-015",
-      "storage_path": "/products/p015.webp",
-      "media_type": "image",
-      "file_name": "p015.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:19:16.039Z"
-    },
-    {
-      "id": "med-img-AK-016",
-      "product_id": "AK-016",
-      "storage_path": "/products/p016.webp",
-      "media_type": "image",
-      "file_name": "p016.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:18:16.039Z"
-    },
-    {
-      "id": "med-img-AK-017",
-      "product_id": "AK-017",
-      "storage_path": "/products/p017.webp",
-      "media_type": "image",
-      "file_name": "p017.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:17:16.039Z"
-    },
-    {
-      "id": "med-img-AK-018",
-      "product_id": "AK-018",
-      "storage_path": "/products/p018.webp",
-      "media_type": "image",
-      "file_name": "p018.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:16:16.039Z"
-    },
-    {
-      "id": "med-img-AK-019",
-      "product_id": "AK-019",
-      "storage_path": "/products/p019.webp",
-      "media_type": "image",
-      "file_name": "p019.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:15:16.039Z"
-    },
-    {
-      "id": "med-img-AK-020",
-      "product_id": "AK-020",
-      "storage_path": "/products/p020.webp",
-      "media_type": "image",
-      "file_name": "p020.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:14:16.039Z"
-    },
-    {
-      "id": "med-img-AK-021",
-      "product_id": "AK-021",
-      "storage_path": "/products/p021.webp",
-      "media_type": "image",
-      "file_name": "p021.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:13:16.039Z"
-    },
-    {
-      "id": "med-img-AK-022",
-      "product_id": "AK-022",
-      "storage_path": "/products/p022.webp",
-      "media_type": "image",
-      "file_name": "p022.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:12:16.039Z"
-    },
-    {
-      "id": "med-img-AK-023",
-      "product_id": "AK-023",
-      "storage_path": "/products/p023.webp",
-      "media_type": "image",
-      "file_name": "p023.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:11:16.039Z"
-    },
-    {
-      "id": "med-img-AK-024",
-      "product_id": "AK-024",
-      "storage_path": "/products/p024.webp",
-      "media_type": "image",
-      "file_name": "p024.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:10:16.039Z"
-    },
-    {
-      "id": "med-img-AK-025",
-      "product_id": "AK-025",
-      "storage_path": "/products/p025.webp",
-      "media_type": "image",
-      "file_name": "p025.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:09:16.039Z"
-    },
-    {
-      "id": "med-img-AK-026",
-      "product_id": "AK-026",
-      "storage_path": "/products/p026.webp",
-      "media_type": "image",
-      "file_name": "p026.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:08:16.039Z"
-    },
-    {
-      "id": "med-img-AK-027",
-      "product_id": "AK-027",
-      "storage_path": "/products/p027.webp",
-      "media_type": "image",
-      "file_name": "p027.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:07:16.039Z"
-    },
-    {
-      "id": "med-img-AK-028",
-      "product_id": "AK-028",
-      "storage_path": "/products/p028.webp",
-      "media_type": "image",
-      "file_name": "p028.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:06:16.039Z"
-    },
-    {
-      "id": "med-img-AK-029",
-      "product_id": "AK-029",
-      "storage_path": "/products/p029.webp",
-      "media_type": "image",
-      "file_name": "p029.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:05:16.039Z"
-    },
-    {
-      "id": "med-img-AK-030",
-      "product_id": "AK-030",
-      "storage_path": "/products/p030.webp",
-      "media_type": "image",
-      "file_name": "p030.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:04:16.039Z"
-    },
-    {
-      "id": "med-img-AK-031",
-      "product_id": "AK-031",
-      "storage_path": "/products/p031.webp",
-      "media_type": "image",
-      "file_name": "p031.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:03:16.039Z"
-    },
-    {
-      "id": "med-img-AK-032",
-      "product_id": "AK-032",
-      "storage_path": "/products/p032.webp",
-      "media_type": "image",
-      "file_name": "p032.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:02:16.039Z"
-    },
-    {
-      "id": "med-vid-AK-032",
-      "product_id": "AK-032",
-      "storage_path": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-      "media_type": "video",
-      "file_name": "round-personalized-wall-clock-ak-032-video.mp4",
-      "display_order": 1,
-      "created_at": "2026-10-16T19:02:16.039Z"
-    },
-    {
-      "id": "med-img-AK-033",
-      "product_id": "AK-033",
-      "storage_path": "/products/p033.webp",
-      "media_type": "image",
-      "file_name": "p033.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:01:16.039Z"
-    },
-    {
-      "id": "med-img-AK-034",
-      "product_id": "AK-034",
-      "storage_path": "/products/p034.webp",
-      "media_type": "image",
-      "file_name": "p034.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T19:00:16.039Z"
-    },
-    {
-      "id": "med-img-AK-035",
-      "product_id": "AK-035",
-      "storage_path": "/products/p035.webp",
-      "media_type": "image",
-      "file_name": "p035.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:59:16.039Z"
-    },
-    {
-      "id": "med-img-AK-036",
-      "product_id": "AK-036",
-      "storage_path": "/products/p036.webp",
-      "media_type": "image",
-      "file_name": "p036.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:58:16.039Z"
-    },
-    {
-      "id": "med-img-AK-037",
-      "product_id": "AK-037",
-      "storage_path": "/products/p037.webp",
-      "media_type": "image",
-      "file_name": "p037.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:57:16.039Z"
-    },
-    {
-      "id": "med-img-AK-038",
-      "product_id": "AK-038",
-      "storage_path": "/products/p038.webp",
-      "media_type": "image",
-      "file_name": "p038.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:56:16.039Z"
-    },
-    {
-      "id": "med-img-AK-039",
-      "product_id": "AK-039",
-      "storage_path": "/products/p039.webp",
-      "media_type": "image",
-      "file_name": "p039.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:55:16.039Z"
-    },
-    {
-      "id": "med-img-AK-040",
-      "product_id": "AK-040",
-      "storage_path": "/products/p040.webp",
-      "media_type": "image",
-      "file_name": "p040.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:54:16.039Z"
-    },
-    {
-      "id": "med-img-AK-041",
-      "product_id": "AK-041",
-      "storage_path": "/products/p041.webp",
-      "media_type": "image",
-      "file_name": "p041.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:53:16.039Z"
-    },
-    {
-      "id": "med-img-AK-042",
-      "product_id": "AK-042",
-      "storage_path": "/products/p042.webp",
-      "media_type": "image",
-      "file_name": "p042.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:52:16.039Z"
-    },
-    {
-      "id": "med-img-AK-043",
-      "product_id": "AK-043",
-      "storage_path": "/products/p043.webp",
-      "media_type": "image",
-      "file_name": "p043.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:51:16.039Z"
-    },
-    {
-      "id": "med-img-AK-044",
-      "product_id": "AK-044",
-      "storage_path": "/products/p044.webp",
-      "media_type": "image",
-      "file_name": "p044.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:50:16.039Z"
-    },
-    {
-      "id": "med-img-AK-045",
-      "product_id": "AK-045",
-      "storage_path": "/products/p045.webp",
-      "media_type": "image",
-      "file_name": "p045.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:49:16.039Z"
-    },
-    {
-      "id": "med-img-AK-046",
-      "product_id": "AK-046",
-      "storage_path": "/products/p046.webp",
-      "media_type": "image",
-      "file_name": "p046.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:48:16.039Z"
-    },
-    {
-      "id": "med-img-AK-047",
-      "product_id": "AK-047",
-      "storage_path": "/products/p047.webp",
-      "media_type": "image",
-      "file_name": "p047.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:47:16.039Z"
-    },
-    {
-      "id": "med-img-AK-048",
-      "product_id": "AK-048",
-      "storage_path": "/products/p048.webp",
-      "media_type": "image",
-      "file_name": "p048.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:46:16.039Z"
-    },
-    {
-      "id": "med-img-AK-049",
-      "product_id": "AK-049",
-      "storage_path": "/products/p049.webp",
-      "media_type": "image",
-      "file_name": "p049.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:45:16.039Z"
-    },
-    {
-      "id": "med-img-AK-050",
-      "product_id": "AK-050",
-      "storage_path": "/products/p050.webp",
-      "media_type": "image",
-      "file_name": "p050.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:44:16.039Z"
-    },
-    {
-      "id": "med-img-AK-051",
-      "product_id": "AK-051",
-      "storage_path": "/products/p051.webp",
-      "media_type": "image",
-      "file_name": "p051.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:43:16.039Z"
-    },
-    {
-      "id": "med-img-AK-052",
-      "product_id": "AK-052",
-      "storage_path": "/products/p052.webp",
-      "media_type": "image",
-      "file_name": "p052.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:42:16.039Z"
-    },
-    {
-      "id": "med-img-AK-053",
-      "product_id": "AK-053",
-      "storage_path": "/products/p053.webp",
-      "media_type": "image",
-      "file_name": "p053.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:41:16.039Z"
-    },
-    {
-      "id": "med-img-AK-054",
-      "product_id": "AK-054",
-      "storage_path": "/products/p054.webp",
-      "media_type": "image",
-      "file_name": "p054.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:40:16.039Z"
-    },
-    {
-      "id": "med-img-AK-055",
-      "product_id": "AK-055",
-      "storage_path": "/products/p055.webp",
-      "media_type": "image",
-      "file_name": "p055.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:39:16.039Z"
-    },
-    {
-      "id": "med-img-AK-056",
-      "product_id": "AK-056",
-      "storage_path": "/products/p056.webp",
-      "media_type": "image",
-      "file_name": "p056.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:38:16.039Z"
-    },
-    {
-      "id": "med-img-AK-057",
-      "product_id": "AK-057",
-      "storage_path": "/products/p057.webp",
-      "media_type": "image",
-      "file_name": "p057.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:37:16.039Z"
-    },
-    {
-      "id": "med-img-AK-058",
-      "product_id": "AK-058",
-      "storage_path": "/products/p058.webp",
-      "media_type": "image",
-      "file_name": "p058.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:36:16.039Z"
-    },
-    {
-      "id": "med-img-AK-059",
-      "product_id": "AK-059",
-      "storage_path": "/products/p059.webp",
-      "media_type": "image",
-      "file_name": "p059.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:35:16.039Z"
-    },
-    {
-      "id": "med-img-AK-060",
-      "product_id": "AK-060",
-      "storage_path": "/products/p060.webp",
-      "media_type": "image",
-      "file_name": "p060.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:34:16.039Z"
-    },
-    {
-      "id": "med-img-AK-061",
-      "product_id": "AK-061",
-      "storage_path": "/products/p061.webp",
-      "media_type": "image",
-      "file_name": "p061.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:33:16.039Z"
-    },
-    {
-      "id": "med-vid-AK-061",
-      "product_id": "AK-061",
-      "storage_path": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4",
-      "media_type": "video",
-      "file_name": "black-decorative-tray-ak-061-video.mp4",
-      "display_order": 1,
-      "created_at": "2026-10-16T18:33:16.039Z"
-    },
-    {
-      "id": "med-img-AK-062",
-      "product_id": "AK-062",
-      "storage_path": "/products/p062.webp",
-      "media_type": "image",
-      "file_name": "p062.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:32:16.039Z"
-    },
-    {
-      "id": "med-img-AK-063",
-      "product_id": "AK-063",
-      "storage_path": "/products/p063.webp",
-      "media_type": "image",
-      "file_name": "p063.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:31:16.039Z"
-    },
-    {
-      "id": "med-img-AK-064",
-      "product_id": "AK-064",
-      "storage_path": "/products/p064.webp",
-      "media_type": "image",
-      "file_name": "p064.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:30:16.039Z"
-    },
-    {
-      "id": "med-img-AK-065",
-      "product_id": "AK-065",
-      "storage_path": "/products/p065.webp",
-      "media_type": "image",
-      "file_name": "p065.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:29:16.039Z"
-    },
-    {
-      "id": "med-img-AK-066",
-      "product_id": "AK-066",
-      "storage_path": "/products/p066.webp",
-      "media_type": "image",
-      "file_name": "p066.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:28:16.039Z"
-    },
-    {
-      "id": "med-img-AK-067",
-      "product_id": "AK-067",
-      "storage_path": "/products/p067.webp",
-      "media_type": "image",
-      "file_name": "p067.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:27:16.039Z"
-    },
-    {
-      "id": "med-img-AK-068",
-      "product_id": "AK-068",
-      "storage_path": "/products/p068.webp",
-      "media_type": "image",
-      "file_name": "p068.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:26:16.039Z"
-    },
-    {
-      "id": "med-img-AK-069",
-      "product_id": "AK-069",
-      "storage_path": "/products/p069.webp",
-      "media_type": "image",
-      "file_name": "p069.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:25:16.039Z"
-    },
-    {
-      "id": "med-img-AK-070",
-      "product_id": "AK-070",
-      "storage_path": "/products/p070.webp",
-      "media_type": "image",
-      "file_name": "p070.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:24:16.039Z"
-    },
-    {
-      "id": "med-img-AK-071",
-      "product_id": "AK-071",
-      "storage_path": "/products/p071.webp",
-      "media_type": "image",
-      "file_name": "p071.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:23:16.039Z"
-    },
-    {
-      "id": "med-img-AK-072",
-      "product_id": "AK-072",
-      "storage_path": "/products/p072.webp",
-      "media_type": "image",
-      "file_name": "p072.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:22:16.039Z"
-    },
-    {
-      "id": "med-img-AK-073",
-      "product_id": "AK-073",
-      "storage_path": "/products/p073.webp",
-      "media_type": "image",
-      "file_name": "p073.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:21:16.039Z"
-    },
-    {
-      "id": "med-img-AK-074",
-      "product_id": "AK-074",
-      "storage_path": "/products/p074.webp",
-      "media_type": "image",
-      "file_name": "p074.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:20:16.039Z"
-    },
-    {
-      "id": "med-img-AK-075",
-      "product_id": "AK-075",
-      "storage_path": "/products/p075.webp",
-      "media_type": "image",
-      "file_name": "p075.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:19:16.039Z"
-    },
-    {
-      "id": "med-img-AK-076",
-      "product_id": "AK-076",
-      "storage_path": "/products/p076.webp",
-      "media_type": "image",
-      "file_name": "p076.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:18:16.039Z"
-    },
-    {
-      "id": "med-img-AK-077",
-      "product_id": "AK-077",
-      "storage_path": "/products/p077.webp",
-      "media_type": "image",
-      "file_name": "p077.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:17:16.039Z"
-    },
-    {
-      "id": "med-img-AK-078",
-      "product_id": "AK-078",
-      "storage_path": "/products/p078.webp",
-      "media_type": "image",
-      "file_name": "p078.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:16:16.039Z"
-    },
-    {
-      "id": "med-img-AK-079",
-      "product_id": "AK-079",
-      "storage_path": "/products/p079.webp",
-      "media_type": "image",
-      "file_name": "p079.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:15:16.039Z"
-    },
-    {
-      "id": "med-img-AK-080",
-      "product_id": "AK-080",
-      "storage_path": "/products/p080.webp",
-      "media_type": "image",
-      "file_name": "p080.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:14:16.039Z"
-    },
-    {
-      "id": "med-img-AK-081",
-      "product_id": "AK-081",
-      "storage_path": "/products/p081.webp",
-      "media_type": "image",
-      "file_name": "p081.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:13:16.039Z"
-    },
-    {
-      "id": "med-img-AK-082",
-      "product_id": "AK-082",
-      "storage_path": "/products/p082.webp",
-      "media_type": "image",
-      "file_name": "p082.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:12:16.039Z"
-    },
-    {
-      "id": "med-img-AK-083",
-      "product_id": "AK-083",
-      "storage_path": "/products/p083.webp",
-      "media_type": "image",
-      "file_name": "p083.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:11:16.039Z"
-    },
-    {
-      "id": "med-img-AK-084",
-      "product_id": "AK-084",
-      "storage_path": "/products/p084.webp",
-      "media_type": "image",
-      "file_name": "p084.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:10:16.039Z"
-    },
-    {
-      "id": "med-img-AK-085",
-      "product_id": "AK-085",
-      "storage_path": "/products/p085.webp",
-      "media_type": "image",
-      "file_name": "p085.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:09:16.039Z"
-    },
-    {
-      "id": "med-img-AK-086",
-      "product_id": "AK-086",
-      "storage_path": "/products/p086.webp",
-      "media_type": "image",
-      "file_name": "p086.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:08:16.039Z"
-    },
-    {
-      "id": "med-img-AK-087",
-      "product_id": "AK-087",
-      "storage_path": "/products/p087.webp",
-      "media_type": "image",
-      "file_name": "p087.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:07:16.039Z"
-    },
-    {
-      "id": "med-img-AK-088",
-      "product_id": "AK-088",
-      "storage_path": "/products/p088.webp",
-      "media_type": "image",
-      "file_name": "p088.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:06:16.039Z"
-    },
-    {
-      "id": "med-img-AK-089",
-      "product_id": "AK-089",
-      "storage_path": "/products/p089.webp",
-      "media_type": "image",
-      "file_name": "p089.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:05:16.039Z"
-    },
-    {
-      "id": "med-img-AK-090",
-      "product_id": "AK-090",
-      "storage_path": "/products/p090.webp",
-      "media_type": "image",
-      "file_name": "p090.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:04:16.039Z"
-    },
-    {
-      "id": "med-img-AK-091",
-      "product_id": "AK-091",
-      "storage_path": "/products/p091.webp",
-      "media_type": "image",
-      "file_name": "p091.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:03:16.039Z"
-    },
-    {
-      "id": "med-img-AK-092",
-      "product_id": "AK-092",
-      "storage_path": "/products/p092.webp",
-      "media_type": "image",
-      "file_name": "p092.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:02:16.039Z"
-    },
-    {
-      "id": "med-img-AK-093",
-      "product_id": "AK-093",
-      "storage_path": "/products/p093.webp",
-      "media_type": "image",
-      "file_name": "p093.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:01:16.039Z"
-    },
-    {
-      "id": "med-img-AK-094",
-      "product_id": "AK-094",
-      "storage_path": "/products/p094.webp",
-      "media_type": "image",
-      "file_name": "p094.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T18:00:16.039Z"
-    },
-    {
-      "id": "med-img-AK-095",
-      "product_id": "AK-095",
-      "storage_path": "/products/p095.webp",
-      "media_type": "image",
-      "file_name": "p095.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:59:16.039Z"
-    },
-    {
-      "id": "med-img-AK-096",
-      "product_id": "AK-096",
-      "storage_path": "/products/p096.webp",
-      "media_type": "image",
-      "file_name": "p096.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:58:16.039Z"
-    },
-    {
-      "id": "med-img-AK-097",
-      "product_id": "AK-097",
-      "storage_path": "/products/p097.webp",
-      "media_type": "image",
-      "file_name": "p097.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:57:16.039Z"
-    },
-    {
-      "id": "med-img-AK-098",
-      "product_id": "AK-098",
-      "storage_path": "/products/p098.webp",
-      "media_type": "image",
-      "file_name": "p098.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:56:16.039Z"
-    },
-    {
-      "id": "med-img-AK-099",
-      "product_id": "AK-099",
-      "storage_path": "/products/p099.webp",
-      "media_type": "image",
-      "file_name": "p099.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:55:16.039Z"
-    },
-    {
-      "id": "med-img-AK-100",
-      "product_id": "AK-100",
-      "storage_path": "/products/p100.webp",
-      "media_type": "image",
-      "file_name": "p100.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:54:16.039Z"
-    },
-    {
-      "id": "med-img-AK-101",
-      "product_id": "AK-101",
-      "storage_path": "/products/p101.webp",
-      "media_type": "image",
-      "file_name": "p101.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:53:16.039Z"
-    },
-    {
-      "id": "med-img-AK-102",
-      "product_id": "AK-102",
-      "storage_path": "/products/p102.webp",
-      "media_type": "image",
-      "file_name": "p102.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:52:16.039Z"
-    },
-    {
-      "id": "med-img-AK-103",
-      "product_id": "AK-103",
-      "storage_path": "/products/p103.webp",
-      "media_type": "image",
-      "file_name": "p103.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:51:16.039Z"
-    },
-    {
-      "id": "med-img-AK-104",
-      "product_id": "AK-104",
-      "storage_path": "/products/p104.webp",
-      "media_type": "image",
-      "file_name": "p104.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:50:16.039Z"
-    },
-    {
-      "id": "med-img-AK-105",
-      "product_id": "AK-105",
-      "storage_path": "/products/p105.webp",
-      "media_type": "image",
-      "file_name": "p105.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:49:16.039Z"
-    },
-    {
-      "id": "med-img-AK-106",
-      "product_id": "AK-106",
-      "storage_path": "/products/p106.webp",
-      "media_type": "image",
-      "file_name": "p106.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:48:16.039Z"
-    },
-    {
-      "id": "med-img-AK-107",
-      "product_id": "AK-107",
-      "storage_path": "/products/p107.webp",
-      "media_type": "image",
-      "file_name": "p107.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:47:16.039Z"
-    },
-    {
-      "id": "med-img-AK-108",
-      "product_id": "AK-108",
-      "storage_path": "/products/p108.webp",
-      "media_type": "image",
-      "file_name": "p108.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:46:16.039Z"
-    },
-    {
-      "id": "med-img-AK-109",
-      "product_id": "AK-109",
-      "storage_path": "/products/p109.webp",
-      "media_type": "image",
-      "file_name": "p109.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:45:16.039Z"
-    },
-    {
-      "id": "med-img-AK-110",
-      "product_id": "AK-110",
-      "storage_path": "/products/p110.webp",
-      "media_type": "image",
-      "file_name": "p110.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:44:16.039Z"
-    },
-    {
-      "id": "med-img-AK-111",
-      "product_id": "AK-111",
-      "storage_path": "/products/p111.webp",
-      "media_type": "image",
-      "file_name": "p111.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:43:16.039Z"
-    },
-    {
-      "id": "med-img-AK-112",
-      "product_id": "AK-112",
-      "storage_path": "/products/p112.webp",
-      "media_type": "image",
-      "file_name": "p112.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:42:16.039Z"
-    },
-    {
-      "id": "med-img-AK-113",
-      "product_id": "AK-113",
-      "storage_path": "/products/p113.webp",
-      "media_type": "image",
-      "file_name": "p113.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:41:16.039Z"
-    },
-    {
-      "id": "med-img-AK-114",
-      "product_id": "AK-114",
-      "storage_path": "/products/p114.webp",
-      "media_type": "image",
-      "file_name": "p114.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:40:16.039Z"
-    },
-    {
-      "id": "med-img-AK-115",
-      "product_id": "AK-115",
-      "storage_path": "/products/p115.webp",
-      "media_type": "image",
-      "file_name": "p115.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:39:16.039Z"
-    },
-    {
-      "id": "med-img-AK-116",
-      "product_id": "AK-116",
-      "storage_path": "/products/p116.webp",
-      "media_type": "image",
-      "file_name": "p116.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:38:16.039Z"
-    },
-    {
-      "id": "med-img-AK-117",
-      "product_id": "AK-117",
-      "storage_path": "/products/p117.webp",
-      "media_type": "image",
-      "file_name": "p117.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:37:16.039Z"
-    },
-    {
-      "id": "med-img-AK-118",
-      "product_id": "AK-118",
-      "storage_path": "/products/p118.webp",
-      "media_type": "image",
-      "file_name": "p118.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:36:16.039Z"
-    },
-    {
-      "id": "med-img-AK-119",
-      "product_id": "AK-119",
-      "storage_path": "/products/p119.webp",
-      "media_type": "image",
-      "file_name": "p119.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:35:16.039Z"
-    },
-    {
-      "id": "med-img-AK-120",
-      "product_id": "AK-120",
-      "storage_path": "/products/p120.webp",
-      "media_type": "image",
-      "file_name": "p120.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:34:16.039Z"
-    },
-    {
-      "id": "med-img-AK-121",
-      "product_id": "AK-121",
-      "storage_path": "/products/p121.webp",
-      "media_type": "image",
-      "file_name": "p121.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:33:16.039Z"
-    },
-    {
-      "id": "med-img-AK-122",
-      "product_id": "AK-122",
-      "storage_path": "/products/p122.webp",
-      "media_type": "image",
-      "file_name": "p122.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:32:16.039Z"
-    },
-    {
-      "id": "med-img-AK-123",
-      "product_id": "AK-123",
-      "storage_path": "/products/p123.webp",
-      "media_type": "image",
-      "file_name": "p123.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:31:16.039Z"
-    },
-    {
-      "id": "med-img-AK-124",
-      "product_id": "AK-124",
-      "storage_path": "/products/p124.webp",
-      "media_type": "image",
-      "file_name": "p124.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:30:16.039Z"
-    },
-    {
-      "id": "med-img-AK-125",
-      "product_id": "AK-125",
-      "storage_path": "/products/p125.webp",
-      "media_type": "image",
-      "file_name": "p125.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:29:16.039Z"
-    },
-    {
-      "id": "med-img-AK-126",
-      "product_id": "AK-126",
-      "storage_path": "/products/p126.webp",
-      "media_type": "image",
-      "file_name": "p126.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:28:16.039Z"
-    },
-    {
-      "id": "med-img-AK-127",
-      "product_id": "AK-127",
-      "storage_path": "/products/p127.webp",
-      "media_type": "image",
-      "file_name": "p127.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:27:16.039Z"
-    },
-    {
-      "id": "med-img-AK-128",
-      "product_id": "AK-128",
-      "storage_path": "/products/p128.webp",
-      "media_type": "image",
-      "file_name": "p128.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:26:16.039Z"
-    },
-    {
-      "id": "med-img-AK-129",
-      "product_id": "AK-129",
-      "storage_path": "/products/p129.webp",
-      "media_type": "image",
-      "file_name": "p129.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:25:16.039Z"
-    },
-    {
-      "id": "med-img-AK-130",
-      "product_id": "AK-130",
-      "storage_path": "/products/p130.webp",
-      "media_type": "image",
-      "file_name": "p130.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:24:16.039Z"
-    },
-    {
-      "id": "med-img-AK-131",
-      "product_id": "AK-131",
-      "storage_path": "/products/p131.webp",
-      "media_type": "image",
-      "file_name": "p131.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:23:16.039Z"
-    },
-    {
-      "id": "med-img-AK-132",
-      "product_id": "AK-132",
-      "storage_path": "/products/p132.webp",
-      "media_type": "image",
-      "file_name": "p132.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:22:16.039Z"
-    },
-    {
-      "id": "med-img-AK-133",
-      "product_id": "AK-133",
-      "storage_path": "/products/p133.webp",
-      "media_type": "image",
-      "file_name": "p133.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:21:16.039Z"
-    },
-    {
-      "id": "med-img-AK-134",
-      "product_id": "AK-134",
-      "storage_path": "/products/p134.webp",
-      "media_type": "image",
-      "file_name": "p134.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:20:16.039Z"
-    },
-    {
-      "id": "med-img-AK-135",
-      "product_id": "AK-135",
-      "storage_path": "/products/p135.webp",
-      "media_type": "image",
-      "file_name": "p135.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:19:16.039Z"
-    },
-    {
-      "id": "med-img-AK-136",
-      "product_id": "AK-136",
-      "storage_path": "/products/p136.webp",
-      "media_type": "image",
-      "file_name": "p136.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:18:16.039Z"
-    },
-    {
-      "id": "med-img-AK-137",
-      "product_id": "AK-137",
-      "storage_path": "/products/p137.webp",
-      "media_type": "image",
-      "file_name": "p137.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:17:16.039Z"
-    },
-    {
-      "id": "med-img-AK-138",
-      "product_id": "AK-138",
-      "storage_path": "/products/p138.webp",
-      "media_type": "image",
-      "file_name": "p138.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:16:16.039Z"
-    },
-    {
-      "id": "med-img-AK-139",
-      "product_id": "AK-139",
-      "storage_path": "/products/p139.webp",
-      "media_type": "image",
-      "file_name": "p139.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:15:16.039Z"
-    },
-    {
-      "id": "med-img-AK-140",
-      "product_id": "AK-140",
-      "storage_path": "/products/p140.webp",
-      "media_type": "image",
-      "file_name": "p140.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:14:16.039Z"
-    },
-    {
-      "id": "med-img-AK-141",
-      "product_id": "AK-141",
-      "storage_path": "/products/p141.webp",
-      "media_type": "image",
-      "file_name": "p141.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:13:16.039Z"
-    },
-    {
-      "id": "med-img-AK-142",
-      "product_id": "AK-142",
-      "storage_path": "/products/p142.webp",
-      "media_type": "image",
-      "file_name": "p142.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:12:16.039Z"
-    },
-    {
-      "id": "med-img-AK-143",
-      "product_id": "AK-143",
-      "storage_path": "/products/p143.webp",
-      "media_type": "image",
-      "file_name": "p143.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:11:16.039Z"
-    },
-    {
-      "id": "med-img-AK-144",
-      "product_id": "AK-144",
-      "storage_path": "/products/p144.webp",
-      "media_type": "image",
-      "file_name": "p144.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:10:16.039Z"
-    },
-    {
-      "id": "med-img-AK-145",
-      "product_id": "AK-145",
-      "storage_path": "/products/p145.webp",
-      "media_type": "image",
-      "file_name": "p145.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:09:16.039Z"
-    },
-    {
-      "id": "med-img-AK-146",
-      "product_id": "AK-146",
-      "storage_path": "/products/p146.webp",
-      "media_type": "image",
-      "file_name": "p146.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:08:16.039Z"
-    },
-    {
-      "id": "med-img-AK-147",
-      "product_id": "AK-147",
-      "storage_path": "/products/p147.webp",
-      "media_type": "image",
-      "file_name": "p147.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:07:16.039Z"
-    },
-    {
-      "id": "med-img-AK-148",
-      "product_id": "AK-148",
-      "storage_path": "/products/p148.webp",
-      "media_type": "image",
-      "file_name": "p148.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:06:16.039Z"
-    },
-    {
-      "id": "med-img-AK-149",
-      "product_id": "AK-149",
-      "storage_path": "/products/p149.webp",
-      "media_type": "image",
-      "file_name": "p149.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:05:16.039Z"
-    },
-    {
-      "id": "med-img-AK-150",
-      "product_id": "AK-150",
-      "storage_path": "/products/p150.webp",
-      "media_type": "image",
-      "file_name": "p150.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:04:16.039Z"
-    },
-    {
-      "id": "med-img-AK-151",
-      "product_id": "AK-151",
-      "storage_path": "/products/p151.webp",
-      "media_type": "image",
-      "file_name": "p151.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:03:16.039Z"
-    },
-    {
-      "id": "med-img-AK-152",
-      "product_id": "AK-152",
-      "storage_path": "/products/p152.webp",
-      "media_type": "image",
-      "file_name": "p152.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:02:16.039Z"
-    },
-    {
-      "id": "med-img-AK-153",
-      "product_id": "AK-153",
-      "storage_path": "/products/p153.webp",
-      "media_type": "image",
-      "file_name": "p153.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:01:16.039Z"
-    },
-    {
-      "id": "med-img-AK-154",
-      "product_id": "AK-154",
-      "storage_path": "/products/p154.webp",
-      "media_type": "image",
-      "file_name": "p154.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T17:00:16.039Z"
-    },
-    {
-      "id": "med-img-AK-155",
-      "product_id": "AK-155",
-      "storage_path": "/products/p155.webp",
-      "media_type": "image",
-      "file_name": "p155.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:59:16.039Z"
-    },
-    {
-      "id": "med-img-AK-156",
-      "product_id": "AK-156",
-      "storage_path": "/products/p156.webp",
-      "media_type": "image",
-      "file_name": "p156.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:58:16.039Z"
-    },
-    {
-      "id": "med-img-AK-157",
-      "product_id": "AK-157",
-      "storage_path": "/products/p157.webp",
-      "media_type": "image",
-      "file_name": "p157.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:57:16.039Z"
-    },
-    {
-      "id": "med-img-AK-158",
-      "product_id": "AK-158",
-      "storage_path": "/products/p158.webp",
-      "media_type": "image",
-      "file_name": "p158.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:56:16.039Z"
-    },
-    {
-      "id": "med-img-AK-159",
-      "product_id": "AK-159",
-      "storage_path": "/products/p159.webp",
-      "media_type": "image",
-      "file_name": "p159.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:55:16.039Z"
-    },
-    {
-      "id": "med-img-AK-160",
-      "product_id": "AK-160",
-      "storage_path": "/products/p160.webp",
-      "media_type": "image",
-      "file_name": "p160.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:54:16.039Z"
-    },
-    {
-      "id": "med-img-AK-161",
-      "product_id": "AK-161",
-      "storage_path": "/products/p161.webp",
-      "media_type": "image",
-      "file_name": "p161.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:53:16.039Z"
-    },
-    {
-      "id": "med-img-AK-162",
-      "product_id": "AK-162",
-      "storage_path": "/products/p162.webp",
-      "media_type": "image",
-      "file_name": "p162.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:52:16.039Z"
-    },
-    {
-      "id": "med-img-AK-163",
-      "product_id": "AK-163",
-      "storage_path": "/products/p163.webp",
-      "media_type": "image",
-      "file_name": "p163.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:51:16.039Z"
-    },
-    {
-      "id": "med-img-AK-164",
-      "product_id": "AK-164",
-      "storage_path": "/products/p164.webp",
-      "media_type": "image",
-      "file_name": "p164.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:50:16.039Z"
-    },
-    {
-      "id": "med-img-AK-165",
-      "product_id": "AK-165",
-      "storage_path": "/products/p165.webp",
-      "media_type": "image",
-      "file_name": "p165.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:49:16.039Z"
-    },
-    {
-      "id": "med-img-AK-166",
-      "product_id": "AK-166",
-      "storage_path": "/products/p166.webp",
-      "media_type": "image",
-      "file_name": "p166.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:48:16.039Z"
-    },
-    {
-      "id": "med-img-AK-167",
-      "product_id": "AK-167",
-      "storage_path": "/products/p167.webp",
-      "media_type": "image",
-      "file_name": "p167.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:47:16.039Z"
-    },
-    {
-      "id": "med-img-AK-168",
-      "product_id": "AK-168",
-      "storage_path": "/products/p168.webp",
-      "media_type": "image",
-      "file_name": "p168.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:46:16.039Z"
-    },
-    {
-      "id": "med-img-AK-169",
-      "product_id": "AK-169",
-      "storage_path": "/products/p169.webp",
-      "media_type": "image",
-      "file_name": "p169.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:45:16.039Z"
-    },
-    {
-      "id": "med-img-AK-170",
-      "product_id": "AK-170",
-      "storage_path": "/products/p170.webp",
-      "media_type": "image",
-      "file_name": "p170.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:44:16.039Z"
-    },
-    {
-      "id": "med-img-AK-171",
-      "product_id": "AK-171",
-      "storage_path": "/products/p171.webp",
-      "media_type": "image",
-      "file_name": "p171.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:43:16.039Z"
-    },
-    {
-      "id": "med-img-AK-172",
-      "product_id": "AK-172",
-      "storage_path": "/products/p172.webp",
-      "media_type": "image",
-      "file_name": "p172.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:42:16.039Z"
-    },
-    {
-      "id": "med-img-AK-173",
-      "product_id": "AK-173",
-      "storage_path": "/products/p173.webp",
-      "media_type": "image",
-      "file_name": "p173.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:41:16.039Z"
-    },
-    {
-      "id": "med-img-AK-174",
-      "product_id": "AK-174",
-      "storage_path": "/products/p174.webp",
-      "media_type": "image",
-      "file_name": "p174.webp",
-      "display_order": 0,
-      "created_at": "2026-10-16T16:40:16.039Z"
+      "file_name": "Resin_tray_with_Ganesha_figurine_20261014202146.mov",
+      "file_size": 3363902,
+      "mime_type": "video/quicktime",
+      "display_order": 0,
+      "created_at": "2026-10-15T09:42:29.343Z"
     }
   ]
 }
