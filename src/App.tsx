@@ -19,6 +19,8 @@ import { AdminLogin } from './components/admin/AdminLogin';
 import { AdminDashboard } from './components/admin/AdminDashboard';
 import {
   getAdminSession,
+  logoutAdmin,
+  clearAdminSession,
   fetchProducts,
   fetchCategories,
   saveProduct,
@@ -768,9 +770,13 @@ export const App: React.FC = () => {
     return (
       <AdminDashboard
         session={adminSession}
-        onLogout={() => {
+        onLogout={async () => {
+          await logoutAdmin();
+          clearAdminSession();
           setAdminSession(null);
-          handleGoHome();
+          setCurrentView('admin-login');
+          window.history.pushState({}, '', '/admin/login');
+          showToast('Logged out. Please enter ID and password to log in again.');
         }}
         onBackToStore={() => {
           refreshProducts();

@@ -94,9 +94,12 @@ The dashboard is organized into 12 independent, dedicated sections with a deskto
 
 ---
 
-## 5. Database Backend
+## 5. Automatic Real-Time Database Connection (DATABASE_URL)
 
-The previous external database integration has been completely cleaned from this codebase while preserving all 174 original products and media assets. When you are ready to connect your new backend project, you can integrate your new database client and credentials.
+The application now supports **instant zero-configuration database connection**:
+- As soon as you set `DATABASE_URL` (in your `.env` or Vercel Environment Variables), the server automatically connects to your PostgreSQL database in real time.
+- If your database is new, it automatically creates the required tables (`store_items`, `categories`, `product_media`) and auto-seeds all 174 handcrafted products so you never start with an empty catalogue.
+- If `DATABASE_URL` is omitted, the application operates smoothly with local file storage.
 
 ---
 
@@ -106,6 +109,7 @@ Add the following environment variables in your deployment settings:
 
 | Variable | Description | Example |
 |---|---|---|
+| `DATABASE_URL` | PostgreSQL connection string (Supabase, Neon, etc.) | `postgres://postgres:...@...:5432/postgres` |
 | `ADMIN_USERNAME` | Admin email | `anmolkala.in@gmail.com` |
 | `ADMIN_PASSWORD` | Initial admin password | `mnbvcxz12` |
 | `SESSION_SECRET` | Secret string for HMAC session tokens | `anmolkala-production-secret...` |

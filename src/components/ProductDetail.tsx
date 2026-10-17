@@ -29,7 +29,9 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
   onToast,
 }) => {
   const [relPage, setRelPage] = useState<number>(1);
-  const [showVideo, setShowVideo] = useState<boolean>(false);
+  const hasPhoto = Boolean(product.image_url && product.image_url !== '/logo.png' && product.image_url.trim() !== '');
+  const hasVideo = Boolean(product.video_url && product.video_url.trim() !== '');
+  const [showVideo, setShowVideo] = useState<boolean>(() => !hasPhoto && hasVideo);
   const perPage = 10;
 
   const isReview = product.category === 'Product Image Requires Review';
@@ -103,8 +105,8 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
 
       <div className="product-top">
         <div>
-          {/* Media Switcher Tab if video is attached */}
-          {product.video_url && (
+          {/* Media Switcher Tab ONLY if BOTH photo and video are attached */}
+          {hasVideo && hasPhoto && (
             <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
               <button
                 type="button"
@@ -142,7 +144,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
                   gap: '6px',
                 }}
               >
-                <span>🎬</span> Craft Video (Demonstration)
+                <span>🎬</span> Craft Video
               </button>
             </div>
           )}
@@ -162,7 +164,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
                 controls
                 autoPlay
                 playsInline
-                poster={product.image_url || product.image}
+                poster={hasPhoto ? (product.image_url || product.image) : undefined}
                 style={{ width: '100%', maxHeight: '480px', display: 'block', objectFit: 'contain' }}
               />
             </div>

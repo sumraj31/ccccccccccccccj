@@ -18,6 +18,7 @@ DEPLOY TO VERCEL
    - Build Command: npm run build (preset configured in vercel.json)
    - Output Directory: dist (preset configured in vercel.json)
 3. In Vercel Project > Settings > Environment Variables, configure:
+   - DATABASE_URL = your PostgreSQL connection string (Supabase, Neon, etc.) [Optional: auto-connects in real time]
    - ADMIN_USERNAME = anmolkala.in@gmail.com
    - ADMIN_PASSWORD = your secure admin password
    - SESSION_SECRET = a secure random string (32+ characters) for signing session tokens

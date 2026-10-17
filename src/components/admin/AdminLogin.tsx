@@ -8,7 +8,7 @@ interface AdminLoginProps {
 
 export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackToStore }) => {
   const [viewMode, setViewMode] = useState<'login' | 'forgot'>('login');
-  const [email, setEmail] = useState('anmolkala.in@gmail.com');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -64,13 +64,13 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
     const cleanOverride = overridePass.trim();
 
     if (!cleanOverride) {
-      setError("Please enter the 'mnbvcxz12' override password to sign in.");
+      setError('Please enter the recovery password.');
       return;
     }
 
     // Strict validation of the override password
     if (cleanOverride !== 'mnbvcxz12') {
-      setError("Invalid override password. The correct override password is 'mnbvcxz12'.");
+      setError('Invalid recovery password. Please check and try again.');
       return;
     }
 
@@ -79,15 +79,15 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
       const targetUser = email.trim() || 'anmolkala.in@gmail.com';
       const result = await loginAdmin(targetUser, 'mnbvcxz12');
       if (result.success) {
-        setSuccess("Override password 'mnbvcxz12' validated successfully! Signing in...");
+        setSuccess('Recovery password validated successfully! Signing in...');
         setTimeout(() => {
           onLoginSuccess();
         }, 300);
       } else {
-        setError(result.error || 'Failed to authenticate with override password.');
+        setError(result.error || 'Failed to authenticate with recovery password.');
       }
     } catch (err: any) {
-      setError(err?.message || 'An error occurred during override login.');
+      setError(err?.message || 'An error occurred during recovery login.');
     } finally {
       setLoading(false);
     }
@@ -104,11 +104,11 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
     const cleanConfirm = confirmPass.trim();
 
     if (!cleanOverride) {
-      setError("Please enter the 'mnbvcxz12' override password.");
+      setError('Please enter the recovery password.');
       return;
     }
     if (cleanOverride !== 'mnbvcxz12') {
-      setError("Invalid override password. Please enter 'mnbvcxz12'.");
+      setError('Invalid recovery password. Please try again.');
       return;
     }
     if (!cleanNew) {
@@ -194,23 +194,12 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
               fontSize: '22px',
               fontWeight: 800,
               color: '#0f172a',
-              margin: '0 0 6px',
+              margin: '0',
               letterSpacing: '-0.3px',
             }}
           >
             {viewMode === 'login' ? 'Anmol Kala Admin Portal' : 'Admin Password Recovery'}
           </h1>
-          <p
-            style={{
-              fontSize: '13px',
-              color: '#64748b',
-              margin: 0,
-            }}
-          >
-            {viewMode === 'login'
-              ? 'Authorized access only. Enter your administrative credentials.'
-              : 'Validate the override password (mnbvcxz12) to sign in or reset credentials.'}
-          </p>
         </div>
 
         {error && (
@@ -333,7 +322,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
                   autoComplete="current-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter password (or override: mnbvcxz12)"
+                  placeholder="Enter your password"
                   disabled={loading}
                   style={{
                     width: '100%',
@@ -351,11 +340,11 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
               </div>
             </div>
 
-            {/* Forgot Password action link & indicator */}
+            {/* Forgot Password action link */}
             <div
               style={{
                 display: 'flex',
-                justifyContent: 'space-between',
+                justifyContent: 'flex-start',
                 alignItems: 'center',
                 marginBottom: '18px',
                 fontSize: '12px',
@@ -383,26 +372,6 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
                 }}
               >
                 <span>🔑 Forgot Password?</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  setPassword('mnbvcxz12');
-                }}
-                style={{
-                  background: '#fef3c7',
-                  color: '#92400e',
-                  border: '1px solid #fde68a',
-                  padding: '3px 8px',
-                  borderRadius: '12px',
-                  fontSize: '11px',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                }}
-                title="Click to fill override password"
-              >
-                Override: mnbvcxz12
               </button>
             </div>
 
@@ -438,59 +407,23 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
             </button>
           </form>
         ) : (
-          /* FORGOT PASSWORD / OVERRIDE LOGIN VIEW */
+          /* FORGOT PASSWORD / RECOVERY VIEW */
           <div>
-            <div
-              style={{
-                background: '#f8fafc',
-                border: '1px solid #e2e8f0',
-                borderRadius: '8px',
-                padding: '12px',
-                marginBottom: '18px',
-                fontSize: '12px',
-                lineHeight: '1.5',
-                color: '#475569',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>
-                <span>🛡️ Override Login Verification</span>
-              </div>
-              <div>
-                Enter the master override password <code>mnbvcxz12</code> below to validate and sign in immediately.
-              </div>
-            </div>
-
-            <div style={{ marginBottom: '16px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
-                <label
-                  htmlFor="override-password"
-                  style={{
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    color: '#334155',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
-                  }}
-                >
-                  Override Password
-                </label>
-                <div style={{ display: 'flex', gap: '8px' }}>
-                  <button
-                    type="button"
-                    onClick={() => setOverridePass('mnbvcxz12')}
+            <form onSubmit={handleResetWithOverride} style={{ marginBottom: '14px' }}>
+              <div style={{ marginBottom: '16px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                  <label
+                    htmlFor="override-password"
                     style={{
-                      background: 'none',
-                      border: 'none',
-                      padding: 0,
-                      fontSize: '11px',
-                      color: '#2874f0',
+                      fontSize: '12px',
                       fontWeight: 700,
-                      cursor: 'pointer',
-                      textDecoration: 'underline',
+                      color: '#334155',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
                     }}
                   >
-                    Use 'mnbvcxz12'
-                  </button>
+                    Master Recovery Password
+                  </label>
                   <button
                     type="button"
                     onClick={() => setShowOverridePass(!showOverridePass)}
@@ -507,86 +440,25 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
                     {showOverridePass ? 'Hide' : 'Show'}
                   </button>
                 </div>
+                <input
+                  id="override-password"
+                  type={showOverridePass ? 'text' : 'password'}
+                  value={overridePass}
+                  onChange={(e) => setOverridePass(e.target.value)}
+                  placeholder="Enter recovery password"
+                  disabled={loading}
+                  autoFocus
+                  style={{
+                    width: '100%',
+                    padding: '12px 13px',
+                    borderRadius: '6px',
+                    border: '1px solid #cbd5e1',
+                    fontSize: '14px',
+                    outline: 'none',
+                    boxSizing: 'border-box',
+                  }}
+                />
               </div>
-              <input
-                id="override-password"
-                type={showOverridePass ? 'text' : 'password'}
-                value={overridePass}
-                onChange={(e) => setOverridePass(e.target.value)}
-                placeholder="Enter override password: mnbvcxz12"
-                disabled={loading}
-                autoFocus
-                style={{
-                  width: '100%',
-                  padding: '12px 13px',
-                  borderRadius: '6px',
-                  border: '1px solid #cbd5e1',
-                  fontSize: '14px',
-                  outline: 'none',
-                  boxSizing: 'border-box',
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    e.preventDefault();
-                    if (showChangeFields) {
-                      handleResetWithOverride(e);
-                    } else {
-                      handleOverrideLogin();
-                    }
-                  }
-                }}
-              />
-            </div>
-
-            {/* Direct Login Button with Override */}
-            {!showChangeFields && (
-              <button
-                type="button"
-                onClick={() => handleOverrideLogin()}
-                disabled={loading}
-                style={{
-                  width: '100%',
-                  padding: '13px',
-                  borderRadius: '6px',
-                  border: 'none',
-                  background: loading ? '#94a3b8' : 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
-                  color: '#ffffff',
-                  fontSize: '14px',
-                  fontWeight: 800,
-                  cursor: loading ? 'not-allowed' : 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
-                  boxShadow: '0 4px 12px rgba(22, 101, 52, 0.25)',
-                  marginBottom: '14px',
-                }}
-              >
-                {loading ? 'Validating Override...' : "Validate 'mnbvcxz12' & Sign In ➔"}
-              </button>
-            )}
-
-            {/* Toggle Change Password Option */}
-            <div style={{ marginBottom: '14px', textAlign: 'center' }}>
-              <button
-                type="button"
-                onClick={() => setShowChangeFields(!showChangeFields)}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: '#64748b',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  textDecoration: 'underline',
-                }}
-              >
-                {showChangeFields ? '▲ Hide New Password Form' : '▼ Want to set a new password instead?'}
-              </button>
-            </div>
-
-            {showChangeFields && (
-              <form onSubmit={handleResetWithOverride} style={{ marginBottom: '14px' }}>
                 <div style={{ marginBottom: '14px' }}>
                   <label
                     htmlFor="new-admin-password"
@@ -671,7 +543,6 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
                   {loading ? 'Updating Password...' : 'Validate & Set New Password ➔'}
                 </button>
               </form>
-            )}
 
             <button
               type="button"

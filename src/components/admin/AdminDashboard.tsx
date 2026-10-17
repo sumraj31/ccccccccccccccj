@@ -450,13 +450,6 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       return;
     }
 
-    // MANDATORY PHOTO VALIDATION
-    if (!videoFormPhotoFile && videoFormPublished) {
-      setVideoPhotoError(true);
-      showToast('Please add at least one product photo before publishing this video product.');
-      return;
-    }
-
     if (!videoFormVideoFile) {
       showToast('Please select a video file.');
       return;
@@ -477,11 +470,13 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       const productId = generateUniqueId('AK');
       const slug = `${videoFormName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}-${productId.toLowerCase()}`;
 
-      // Upload mandatory photo
-      let photoUrl = '/logo.png';
+      // Upload photo if provided (optional)
+      let photoUrl = '';
       if (videoFormPhotoFile) {
         const photoMedia = await uploadMediaFile(videoFormPhotoFile, productId, 'image');
         if (photoMedia.storage_path) photoUrl = photoMedia.storage_path;
+      } else if (videoFormPhotoPreview) {
+        photoUrl = videoFormPhotoPreview;
       }
 
       // Upload video file
@@ -791,9 +786,6 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
               <div style={{ fontWeight: 800, fontSize: '18px', color: '#0f172a', lineHeight: 1.2 }}>
                 Anmol Kala
               </div>
-              <div style={{ fontSize: '10px', color: '#94a3b8', letterSpacing: '1px', fontWeight: 700 }}>
-                CLIENT DASHBOARD
-              </div>
             </div>
           </div>
 
@@ -971,12 +963,15 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             </button>
             <button
               type="button"
-              onClick={onLogout}
+              onClick={async () => {
+                await logoutAdmin();
+                onLogout();
+              }}
               style={{
                 background: '#fee2e2',
                 border: '1px solid #fca5a5',
                 borderRadius: '6px',
-                padding: '7px 10px',
+                padding: '7px 12px',
                 fontSize: '12px',
                 fontWeight: 700,
                 color: '#991b1b',
@@ -984,7 +979,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 whiteSpace: 'nowrap',
               }}
             >
-              Logout
+              🔒 Logout
             </button>
           </div>
         </div>
@@ -2011,26 +2006,26 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 )}
               </div>
 
-              {/* MANDATORY PRODUCT PHOTO PICKER */}
+              {/* OPTIONAL PRODUCT COVER PHOTO PICKER */}
               <div
                 style={{
                   marginBottom: '22px',
                   padding: '18px',
                   background: '#fefefe',
-                  border: videoPhotoError ? '2px solid #ef4444' : '1px solid #e2e8f0',
+                  border: '1px solid #e2e8f0',
                   borderRadius: '12px',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px', flexWrap: 'wrap', gap: '6px' }}>
                   <label style={{ fontWeight: 800, fontSize: '14px', color: '#0f172a' }}>
-                    Required Product Photo *
+                    Product Cover Photo (Optional)
                   </label>
-                  <span style={{ fontSize: '12px', color: '#e11d48', fontWeight: 700 }}>
-                    Mandatory for Published Video Products
+                  <span style={{ fontSize: '12px', color: '#0284c7', fontWeight: 700 }}>
+                    Optional — Video will display directly if omitted
                   </span>
                 </div>
                 <p style={{ fontSize: '12px', color: '#64748b', margin: '0 0 12px' }}>
-                  This image will be displayed on the storefront card and as the video poster.
+                  If you upload a photo, it will appear with a "Play Video" option. If you don't upload a photo, the video will be displayed directly.
                 </p>
 
                 <input
@@ -2045,17 +2040,20 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   <div
                     onClick={() => videoFormPhotoPickerRef.current?.click()}
                     style={{
-                      border: '2px dashed #c9a24d',
+                      border: '2px dashed #cbd5e1',
                       borderRadius: '8px',
-                      padding: '24px 14px',
+                      padding: '20px 14px',
                       textAlign: 'center',
-                      background: '#fffdf8',
+                      background: '#f8fafc',
                       cursor: 'pointer',
                     }}
                   >
-                    <div style={{ fontSize: '28px', marginBottom: '4px' }}>📷</div>
+                    <div style={{ fontSize: '24px', marginBottom: '4px' }}>📷</div>
                     <div style={{ fontSize: '13px', fontWeight: 700, color: '#0f172a' }}>
-                      Choose Product Photo from device
+                      Add Optional Cover Photo
+                    </div>
+                    <div style={{ fontSize: '11px', color: '#64748b', marginTop: '2px' }}>
+                      Leave blank to publish video directly without any photo
                     </div>
                   </div>
                 ) : (
@@ -2067,24 +2065,44 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     />
                     <div>
                       <div style={{ color: '#16a34a', fontWeight: 700, fontSize: '13px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                        ✓ Photo attached successfully
+                        ✓ Photo attached (Will display with Play button)
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => videoFormPhotoPickerRef.current?.click()}
-                        style={{
-                          background: '#f1f5f9',
-                          border: '1px solid #cbd5e1',
-                          borderRadius: '6px',
-                          padding: '6px 12px',
-                          fontSize: '12px',
-                          fontWeight: 700,
-                          cursor: 'pointer',
-                          marginTop: '8px',
-                        }}
-                      >
-                        Replace Photo
-                      </button>
+                      <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
+                        <button
+                          type="button"
+                          onClick={() => videoFormPhotoPickerRef.current?.click()}
+                          style={{
+                            background: '#f1f5f9',
+                            border: '1px solid #cbd5e1',
+                            borderRadius: '6px',
+                            padding: '6px 12px',
+                            fontSize: '12px',
+                            fontWeight: 700,
+                            cursor: 'pointer',
+                          }}
+                        >
+                          Replace Photo
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setVideoFormPhotoFile(null);
+                            setVideoFormPhotoPreview('');
+                          }}
+                          style={{
+                            background: '#fee2e2',
+                            color: '#991b1b',
+                            border: '1px solid #fca5a5',
+                            borderRadius: '6px',
+                            padding: '6px 12px',
+                            fontSize: '12px',
+                            fontWeight: 700,
+                            cursor: 'pointer',
+                          }}
+                        >
+                          Remove Photo (Video Only)
+                        </button>
+                      </div>
                     </div>
                   </div>
                 )}

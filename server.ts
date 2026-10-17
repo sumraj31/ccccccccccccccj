@@ -4,9 +4,12 @@ import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
 import crypto from 'crypto';
+import pg from 'pg';
 import { fileURLToPath } from 'url';
 
 dotenv.config({ override: true });
+
+const { Pool } = pg;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -39,7 +42,7 @@ function persistAdminPassword(newPass: string) {
 }
 
 // -------------------------------------------------------------
-// Persistent Handcrafted Products Catalog
+// Baseline Handcrafted Products Catalog (174 Preserved Items)
 // -------------------------------------------------------------
 const catalogStorageFile = path.resolve(__dirname, 'src/data/catalog_storage.json');
 
@@ -55,24 +58,7 @@ let catalogData: CatalogData = {
   media: [],
 };
 
-function initializeCatalogStorage(): CatalogData {
-  try {
-    if (fs.existsSync(catalogStorageFile)) {
-      const raw = fs.readFileSync(catalogStorageFile, 'utf-8');
-      const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed.products) && parsed.products.length > 0) {
-        return {
-          products: parsed.products,
-          categories: Array.isArray(parsed.categories) ? parsed.categories : [],
-          media: Array.isArray(parsed.media) ? parsed.media : [],
-        };
-      }
-    }
-  } catch (e) {
-    console.warn('Could not read catalog_storage.json, initializing from initialData.json:', e);
-  }
-
-  // Load from initialData.json (all 174 baseline products)
+function getBaselineProducts(): any[] {
   let rawProducts: any[] = [];
   try {
     const jsonPath = path.resolve(__dirname, 'src/data/initialData.json');
@@ -85,7 +71,7 @@ function initializeCatalogStorage(): CatalogData {
     console.warn('Could not read initialData.json:', e);
   }
 
-  const initialProducts = rawProducts.map((p: any, idx: number) => {
+  return rawProducts.map((p: any, idx: number) => {
     let video_url = p.video_url || '';
     if (!video_url) {
       if (p.id === 'AK-001') {
@@ -114,7 +100,24 @@ function initializeCatalogStorage(): CatalogData {
       updated_at: p.updated_at || new Date().toISOString(),
     };
   });
+}
 
+function initializeCatalogStorage(): CatalogData {
+  try {
+    if (fs.existsSync(catalogStorageFile)) {
+      const raw = fs.readFileSync(catalogStorageFile, 'utf-8');
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed.products) && parsed.products.length > 0) {
+        return {
+          products: parsed.products,
+          categories: Array.isArray(parsed.categories) ? parsed.categories : [],
+          media: Array.isArray(parsed.media) ? parsed.media : [],
+        };
+      }
+    }
+  } catch (e) {}
+
+  const initialProducts = getBaselineProducts();
   const uniqueCats = Array.from(new Set(initialProducts.map((p) => p.category.trim()))).filter(Boolean).sort();
   const initialCategories = uniqueCats.map((name, i) => ({
     id: `cat-${i + 1}`,
@@ -157,9 +160,7 @@ function initializeCatalogStorage(): CatalogData {
 
   try {
     fs.writeFileSync(catalogStorageFile, JSON.stringify(initialized, null, 2), 'utf-8');
-  } catch (e) {
-    console.warn('Could not write initial catalog_storage.json:', e);
-  }
+  } catch (e) {}
 
   return initialized;
 }
@@ -169,10 +170,142 @@ catalogData = initializeCatalogStorage();
 function persistCatalogStorage() {
   try {
     fs.writeFileSync(catalogStorageFile, JSON.stringify(catalogData, null, 2), 'utf-8');
-  } catch (e) {
-    console.error('Failed to persist catalog_storage.json:', e);
+  } catch (e) {}
+}
+
+// -------------------------------------------------------------
+// Real-Time Auto-Connecting Database Layer (DATABASE_URL)
+// -------------------------------------------------------------
+const rawDatabaseUrl =
+  process.env.DATABASE_URL ||
+  process.env.POSTGRES_URL ||
+  process.env.POSTGRES_PRISMA_URL ||
+  process.env.SUPABASE_DB_URL ||
+  '';
+
+let pgPool: pg.Pool | null = null;
+let isDbConnected = false;
+let dbInfo = {
+  provider: 'Local Storage',
+  status: 'local',
+  error: null as string | null,
+};
+
+async function initDatabase() {
+  if (!rawDatabaseUrl.trim()) {
+    console.log('[Database] No DATABASE_URL provided. Operating smoothly with persistent local catalogue.');
+    return;
+  }
+
+  try {
+    const isLocalhost = rawDatabaseUrl.includes('localhost') || rawDatabaseUrl.includes('127.0.0.1');
+    pgPool = new Pool({
+      connectionString: rawDatabaseUrl,
+      ssl: isLocalhost ? false : { rejectUnauthorized: false },
+      max: 10,
+      connectionTimeoutMillis: 8000,
+    });
+
+    pgPool.on('error', (err) => {
+      console.warn('[Database Pool Warning]:', err.message);
+    });
+
+    // Test connection
+    const client = await pgPool.connect();
+    isDbConnected = true;
+    dbInfo = {
+      provider: 'PostgreSQL (Connected via DATABASE_URL)',
+      status: 'connected',
+      error: null,
+    };
+    console.log('[Database] Real-time connection established via DATABASE_URL!');
+
+    // Initialize Schema
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS store_items (
+        id TEXT PRIMARY KEY,
+        type TEXT DEFAULT 'product',
+        name TEXT NOT NULL,
+        category TEXT NOT NULL,
+        slug TEXT NOT NULL,
+        description TEXT,
+        image_url TEXT,
+        video_url TEXT,
+        tags TEXT,
+        published BOOLEAN DEFAULT true,
+        availability TEXT DEFAULT 'in_stock',
+        created_at TIMESTAMPTZ DEFAULT NOW(),
+        updated_at TIMESTAMPTZ DEFAULT NOW()
+      );
+
+      CREATE TABLE IF NOT EXISTS categories (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL UNIQUE,
+        display_order INT DEFAULT 0,
+        created_at TIMESTAMPTZ DEFAULT NOW(),
+        updated_at TIMESTAMPTZ DEFAULT NOW()
+      );
+
+      CREATE TABLE IF NOT EXISTS product_media (
+        id TEXT PRIMARY KEY,
+        product_id TEXT,
+        storage_path TEXT NOT NULL,
+        media_type TEXT DEFAULT 'image',
+        file_name TEXT,
+        file_size BIGINT DEFAULT 0,
+        mime_type TEXT,
+        display_order INT DEFAULT 0,
+        created_at TIMESTAMPTZ DEFAULT NOW()
+      );
+    `);
+
+    // Check if store_items has data; if empty, auto-seed with preserved 174 products
+    const countRes = await client.query('SELECT COUNT(*) FROM store_items;');
+    const currentCount = parseInt(countRes.rows[0].count, 10);
+    if (currentCount === 0) {
+      console.log('[Database] Empty database detected. Auto-seeding 174 handcrafted products...');
+      const baseline = catalogData.products.length > 0 ? catalogData.products : getBaselineProducts();
+      for (const p of baseline) {
+        await client.query(
+          `INSERT INTO store_items (id, type, name, category, slug, description, image_url, video_url, tags, published, availability, created_at, updated_at)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+           ON CONFLICT (id) DO UPDATE SET
+             name = EXCLUDED.name,
+             category = EXCLUDED.category,
+             updated_at = NOW();`,
+          [
+            p.id,
+            p.type || 'product',
+            p.name,
+            p.category || 'Puja Thali',
+            p.slug,
+            p.description || '',
+            p.image_url || '/logo.png',
+            p.video_url || '',
+            p.tags || '',
+            p.published !== false,
+            p.availability || 'in_stock',
+            p.created_at || new Date().toISOString(),
+            p.updated_at || new Date().toISOString(),
+          ]
+        );
+      }
+      console.log('[Database] 174 products seeded successfully into PostgreSQL!');
+    }
+
+    client.release();
+  } catch (err: any) {
+    console.warn('[Database Connection Failed]:', err?.message);
+    isDbConnected = false;
+    dbInfo = {
+      provider: 'Local Storage (DATABASE_URL connection failed, using local storage)',
+      status: 'fallback',
+      error: err?.message || 'Connection failed',
+    };
   }
 }
+
+initDatabase();
 
 // -------------------------------------------------------------
 // Session & Auth Utilities
@@ -229,8 +362,17 @@ app.get('/robots.txt', (_req: Request, res: Response) => {
   res.send(`User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /admin/\nDisallow: /api/\n\nSitemap: https://anmolkala.in/sitemap.xml\n`);
 });
 
-app.get('/sitemap.xml', (_req: Request, res: Response) => {
-  const slugs = catalogData.products.filter((p) => p.published).map((p) => p.slug).filter(Boolean);
+app.get('/sitemap.xml', async (_req: Request, res: Response) => {
+  let slugs: string[] = [];
+  if (isDbConnected && pgPool) {
+    try {
+      const res = await pgPool.query('SELECT slug FROM store_items WHERE published = true;');
+      slugs = res.rows.map((r: any) => r.slug).filter(Boolean);
+    } catch (e) {}
+  }
+  if (slugs.length === 0) {
+    slugs = catalogData.products.filter((p) => p.published).map((p) => p.slug).filter(Boolean);
+  }
 
   const sitemapCategories = [
     'puja-thali',
@@ -288,29 +430,76 @@ app.get('/sitemap.xml', (_req: Request, res: Response) => {
 });
 
 // -------------------------------------------------------------
-// API ROUTES — Full In-App CRUD with Real Local Persistence
+// API ROUTES — Real-Time Database with Automatic Local Fallback
 // -------------------------------------------------------------
 
-// Catalogue Health Route
+// System Status Route
 app.get('/api/status', async (_req: Request, res: Response) => {
+  let storeItemCount = catalogData.products.length;
+  let publishedCount = catalogData.products.filter((i) => i.published !== false).length;
+  let catCount = catalogData.categories.length;
+
+  if (isDbConnected && pgPool) {
+    try {
+      const pRes = await pgPool.query('SELECT COUNT(*) FROM store_items;');
+      storeItemCount = parseInt(pRes.rows[0].count, 10);
+      const pubRes = await pgPool.query('SELECT COUNT(*) FROM store_items WHERE published = true;');
+      publishedCount = parseInt(pubRes.rows[0].count, 10);
+      const cRes = await pgPool.query('SELECT COUNT(*) FROM categories;');
+      catCount = parseInt(cRes.rows[0].count, 10);
+    } catch (e) {}
+  }
+
   return res.json({
-    status: 'ok',
+    status: isDbConnected ? 'connected' : 'local',
+    provider: dbInfo.provider,
+    is_realtime_database: isDbConnected,
     counts: {
-      store_items: catalogData.products.length,
-      published_products: catalogData.products.filter((i) => i.published !== false).length,
-      categories: catalogData.categories.length,
+      store_items: storeItemCount,
+      published_products: publishedCount,
+      categories: catCount,
       product_media: catalogData.media.length,
-      total_photos: catalogData.media.filter((m) => m.media_type === 'image').length || catalogData.products.length,
+      total_photos: catalogData.media.filter((m) => m.media_type === 'image').length || storeItemCount,
       products_with_videos: catalogData.products.filter((i) => Boolean(i.video_url)).length,
     },
     timestamp: new Date().toISOString(),
   });
 });
 
-// Get Products (with optional category & type filter)
-app.get('/api/products', (req: Request, res: Response) => {
-  let items = [...catalogData.products];
+// Get Products
+app.get('/api/products', async (req: Request, res: Response) => {
   const { category, type } = req.query;
+
+  if (isDbConnected && pgPool) {
+    try {
+      let query = 'SELECT * FROM store_items';
+      const conditions: string[] = [];
+      const values: any[] = [];
+
+      if (category && category !== 'All' && category !== 'all') {
+        values.push(String(category).toLowerCase());
+        conditions.push(`LOWER(category) = $${values.length}`);
+      }
+      if (type) {
+        values.push(type);
+        conditions.push(`type = $${values.length}`);
+      }
+      if (conditions.length > 0) {
+        query += ' WHERE ' + conditions.join(' AND ');
+      }
+      query += ' ORDER BY created_at DESC;';
+
+      const dbRes = await pgPool.query(query, values);
+      if (dbRes.rows.length > 0) {
+        return res.json(dbRes.rows);
+      }
+    } catch (e) {
+      console.warn('[Database Query Error, falling back to local]:', e);
+    }
+  }
+
+  // Fallback to local catalog
+  let items = [...catalogData.products];
   if (category && category !== 'All' && category !== 'all') {
     items = items.filter((i) => i.category.toLowerCase() === String(category).toLowerCase());
   }
@@ -321,7 +510,7 @@ app.get('/api/products', (req: Request, res: Response) => {
 });
 
 // Save (Create or Update) Product
-app.post('/api/products', (req: Request, res: Response) => {
+app.post('/api/products', async (req: Request, res: Response) => {
   const item = req.body;
   if (!item || !item.name) {
     return res.status(400).json({ error: 'Product name is required.' });
@@ -347,6 +536,45 @@ app.post('/api/products', (req: Request, res: Response) => {
     updated_at: now,
   };
 
+  // Sync to PostgreSQL if connected
+  if (isDbConnected && pgPool) {
+    try {
+      await pgPool.query(
+        `INSERT INTO store_items (id, type, name, category, slug, description, image_url, video_url, tags, published, availability, created_at, updated_at)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+         ON CONFLICT (id) DO UPDATE SET
+           name = EXCLUDED.name,
+           category = EXCLUDED.category,
+           slug = EXCLUDED.slug,
+           description = EXCLUDED.description,
+           image_url = EXCLUDED.image_url,
+           video_url = EXCLUDED.video_url,
+           tags = EXCLUDED.tags,
+           published = EXCLUDED.published,
+           availability = EXCLUDED.availability,
+           updated_at = EXCLUDED.updated_at;`,
+        [
+          cleanItem.id,
+          cleanItem.type || 'product',
+          cleanItem.name,
+          cleanItem.category,
+          cleanItem.slug,
+          cleanItem.description,
+          cleanItem.image_url,
+          cleanItem.video_url,
+          cleanItem.tags,
+          cleanItem.published,
+          cleanItem.availability,
+          cleanItem.created_at,
+          cleanItem.updated_at,
+        ]
+      );
+    } catch (e) {
+      console.warn('[DB Error on Save Product]:', e);
+    }
+  }
+
+  // Always keep local memory in sync
   const existingIndex = catalogData.products.findIndex((p) => p.id === id);
   if (existingIndex >= 0) {
     catalogData.products[existingIndex] = cleanItem;
@@ -354,23 +582,23 @@ app.post('/api/products', (req: Request, res: Response) => {
     catalogData.products.unshift(cleanItem);
   }
 
-  // Ensure category exists
-  if (cleanItem.category && !catalogData.categories.some((c) => c.name.toLowerCase() === cleanItem.category.toLowerCase())) {
-    catalogData.categories.push({
-      id: `cat-${catalogData.categories.length + 1}`,
-      name: cleanItem.category,
-      display_order: catalogData.categories.length,
-      created_at: now,
-    });
-  }
-
   persistCatalogStorage();
   return res.json(cleanItem);
 });
 
 // Delete Product
-app.delete('/api/products/:id', (req: Request, res: Response) => {
+app.delete('/api/products/:id', async (req: Request, res: Response) => {
   const id = req.params.id;
+
+  if (isDbConnected && pgPool) {
+    try {
+      await pgPool.query('DELETE FROM store_items WHERE id = $1;', [id]);
+      await pgPool.query('DELETE FROM product_media WHERE product_id = $1;', [id]);
+    } catch (e) {
+      console.warn('[DB Error on Delete Product]:', e);
+    }
+  }
+
   const initialLen = catalogData.products.length;
   catalogData.products = catalogData.products.filter((p) => p.id !== id);
   catalogData.media = catalogData.media.filter((m) => m.product_id !== id);
@@ -382,8 +610,16 @@ app.delete('/api/products/:id', (req: Request, res: Response) => {
 });
 
 // Delete Product Video Only
-app.delete('/api/products/:id/video', (req: Request, res: Response) => {
+app.delete('/api/products/:id/video', async (req: Request, res: Response) => {
   const id = req.params.id;
+
+  if (isDbConnected && pgPool) {
+    try {
+      await pgPool.query("UPDATE store_items SET video_url = '', updated_at = NOW() WHERE id = $1;", [id]);
+      await pgPool.query("DELETE FROM product_media WHERE product_id = $1 AND media_type = 'video';", [id]);
+    } catch (e) {}
+  }
+
   const target = catalogData.products.find((p) => p.id === id);
   if (target) {
     target.video_url = '';
@@ -396,12 +632,20 @@ app.delete('/api/products/:id/video', (req: Request, res: Response) => {
 });
 
 // Get Categories
-app.get('/api/categories', (_req: Request, res: Response) => {
+app.get('/api/categories', async (_req: Request, res: Response) => {
+  if (isDbConnected && pgPool) {
+    try {
+      const cRes = await pgPool.query('SELECT * FROM categories ORDER BY display_order ASC, name ASC;');
+      if (cRes.rows.length > 0) {
+        return res.json(cRes.rows);
+      }
+    } catch (e) {}
+  }
   return res.json(catalogData.categories);
 });
 
-// Save (Create or Update) Category
-app.post('/api/categories', (req: Request, res: Response) => {
+// Save Category
+app.post('/api/categories', async (req: Request, res: Response) => {
   const cat = req.body;
   if (!cat || !cat.name) {
     return res.status(400).json({ error: 'Category name is required' });
@@ -411,7 +655,6 @@ app.post('/api/categories', (req: Request, res: Response) => {
   const id = cat.id || `cat-${Date.now().toString(36).toUpperCase()}`;
   const now = new Date().toISOString();
 
-  const existingIndex = catalogData.categories.findIndex((c) => c.id === id || c.name.toLowerCase() === cleanName.toLowerCase());
   const categoryItem = {
     id,
     name: cleanName,
@@ -420,17 +663,20 @@ app.post('/api/categories', (req: Request, res: Response) => {
     updated_at: now,
   };
 
+  if (isDbConnected && pgPool) {
+    try {
+      await pgPool.query(
+        `INSERT INTO categories (id, name, display_order, created_at, updated_at)
+         VALUES ($1, $2, $3, $4, $5)
+         ON CONFLICT (name) DO UPDATE SET display_order = EXCLUDED.display_order, updated_at = NOW();`,
+        [categoryItem.id, categoryItem.name, categoryItem.display_order, categoryItem.created_at, categoryItem.updated_at]
+      );
+    } catch (e) {}
+  }
+
+  const existingIndex = catalogData.categories.findIndex((c) => c.id === id || c.name.toLowerCase() === cleanName.toLowerCase());
   if (existingIndex >= 0) {
-    const oldName = catalogData.categories[existingIndex].name;
     catalogData.categories[existingIndex] = categoryItem;
-    // Update products assigned to this category if renamed
-    if (oldName !== cleanName) {
-      catalogData.products.forEach((p) => {
-        if (p.category.toLowerCase() === oldName.toLowerCase()) {
-          p.category = cleanName;
-        }
-      });
-    }
   } else {
     catalogData.categories.push(categoryItem);
   }
@@ -440,7 +686,7 @@ app.post('/api/categories', (req: Request, res: Response) => {
 });
 
 // Delete Category
-app.delete('/api/categories/:id', (req: Request, res: Response) => {
+app.delete('/api/categories/:id', async (req: Request, res: Response) => {
   const id = req.params.id;
   const cat = catalogData.categories.find((c) => c.id === id);
   if (!cat) {
@@ -454,20 +700,46 @@ app.delete('/api/categories/:id', (req: Request, res: Response) => {
     });
   }
 
+  if (isDbConnected && pgPool) {
+    try {
+      await pgPool.query('DELETE FROM categories WHERE id = $1;', [id]);
+    } catch (e) {}
+  }
+
   catalogData.categories = catalogData.categories.filter((c) => c.id !== id);
   persistCatalogStorage();
   return res.json({ success: true });
 });
 
 // Get Videos
-app.get('/api/videos', (_req: Request, res: Response) => {
+app.get('/api/videos', async (_req: Request, res: Response) => {
+  if (isDbConnected && pgPool) {
+    try {
+      const vRes = await pgPool.query("SELECT * FROM store_items WHERE video_url IS NOT NULL AND video_url != '' ORDER BY created_at DESC;");
+      if (vRes.rows.length > 0) {
+        return res.json(vRes.rows);
+      }
+    } catch (e) {}
+  }
   const vids = catalogData.products.filter((p) => Boolean(p.video_url));
   return res.json(vids);
 });
 
 // Get Media
-app.get('/api/media', (req: Request, res: Response) => {
+app.get('/api/media', async (req: Request, res: Response) => {
   const productId = req.query.product_id;
+  if (isDbConnected && pgPool) {
+    try {
+      const q = productId
+        ? 'SELECT * FROM product_media WHERE product_id = $1 ORDER BY display_order ASC;'
+        : 'SELECT * FROM product_media ORDER BY created_at DESC;';
+      const mRes = productId ? await pgPool.query(q, [productId]) : await pgPool.query(q);
+      if (mRes.rows.length > 0) {
+        return res.json(mRes.rows);
+      }
+    } catch (e) {}
+  }
+
   if (productId) {
     return res.json(catalogData.media.filter((m) => m.product_id === String(productId)));
   }
@@ -475,7 +747,7 @@ app.get('/api/media', (req: Request, res: Response) => {
 });
 
 // Save Media Item
-app.post('/api/media', (req: Request, res: Response) => {
+app.post('/api/media', async (req: Request, res: Response) => {
   const item = req.body;
   if (!item || !item.storage_path) {
     return res.status(400).json({ error: 'Media storage path is required' });
@@ -492,14 +764,30 @@ app.post('/api/media', (req: Request, res: Response) => {
     created_at: new Date().toISOString(),
   };
 
+  if (isDbConnected && pgPool) {
+    try {
+      await pgPool.query(
+        `INSERT INTO product_media (id, product_id, storage_path, media_type, file_name, file_size, display_order, created_at)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+         ON CONFLICT (id) DO UPDATE SET storage_path = EXCLUDED.storage_path;`,
+        [mediaItem.id, mediaItem.product_id, mediaItem.storage_path, mediaItem.media_type, mediaItem.file_name, mediaItem.file_size, mediaItem.display_order, mediaItem.created_at]
+      );
+    } catch (e) {}
+  }
+
   catalogData.media.push(mediaItem);
   persistCatalogStorage();
   return res.json(mediaItem);
 });
 
 // Delete Media Item
-app.delete('/api/media/:id', (req: Request, res: Response) => {
+app.delete('/api/media/:id', async (req: Request, res: Response) => {
   const id = req.params.id;
+  if (isDbConnected && pgPool) {
+    try {
+      await pgPool.query('DELETE FROM product_media WHERE id = $1;', [id]);
+    } catch (e) {}
+  }
   catalogData.media = catalogData.media.filter((m) => m.id !== id);
   persistCatalogStorage();
   return res.json({ success: true, id });
