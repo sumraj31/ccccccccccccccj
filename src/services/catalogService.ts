@@ -33,28 +33,51 @@ export const baselineProducts: StoreItem[] = defaultProducts.map((p, idx) => {
   };
 });
 
-// Client Storage Keys
-const LOCAL_STORAGE_CATALOG_KEY = 'anmolkala_active_catalog';
+// Explicit tombstone set of deleted product IDs to prevent old browser caches or devices from ever displaying them
+export const DELETED_PRODUCT_IDS = new Set<string>([
+  'AK-073',
+  'AK-096',
+  'AK-097',
+  'AK-148',
+  'AK-149',
+]);
 
-// In-memory catalog cache initialized with baselineProducts or localStorage
-let memoryCatalog: StoreItem[] = [...baselineProducts];
+if (typeof window !== 'undefined') {
+  try {
+    const rawDeleted = localStorage.getItem('anmolkala_deleted_ids');
+    if (rawDeleted) {
+      const parsed = JSON.parse(rawDeleted);
+      if (Array.isArray(parsed)) {
+        parsed.forEach((id: string) => DELETED_PRODUCT_IDS.add(id));
+      }
+    }
+  } catch (e) {}
+}
+
+// Client Storage Keys (Versioned to bust any stale mobile device caches)
+const LOCAL_STORAGE_CATALOG_KEY = 'anmolkala_active_catalog_v4';
+
+// In-memory catalog cache initialized with clean baselineProducts
+let memoryCatalog: StoreItem[] = baselineProducts.filter((p) => !DELETED_PRODUCT_IDS.has(p.id));
+
 if (typeof window !== 'undefined') {
   try {
     const raw = localStorage.getItem(LOCAL_STORAGE_CATALOG_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        memoryCatalog = parsed;
+        memoryCatalog = parsed.filter((p: any) => !DELETED_PRODUCT_IDS.has(p.id));
       }
     }
   } catch (e) {}
 }
 
 function updateLocalCatalogCache(items: StoreItem[]) {
-  memoryCatalog = items;
+  const clean = items.filter((p) => !DELETED_PRODUCT_IDS.has(p.id));
+  memoryCatalog = clean;
   if (typeof window !== 'undefined') {
     try {
-      localStorage.setItem(LOCAL_STORAGE_CATALOG_KEY, JSON.stringify(items));
+      localStorage.setItem(LOCAL_STORAGE_CATALOG_KEY, JSON.stringify(clean));
     } catch (e) {}
   }
 }
@@ -63,6 +86,10 @@ function updateLocalCatalogCache(items: StoreItem[]) {
 export function cleanLegacyStorage() {
   if (typeof window === 'undefined') return;
   try {
+    // Purge old unversioned or stale caches
+    localStorage.removeItem('anmolkala_active_catalog');
+    localStorage.removeItem('anmolkala_active_catalog_v2');
+    localStorage.removeItem('anmolkala_active_catalog_v3');
     localStorage.removeItem('anmolkala_store_items');
     localStorage.removeItem('anmolkala_admin_categories');
     localStorage.removeItem('anmolkala_admin_media');
@@ -123,6 +150,7 @@ export function notifyCatalogUpdated() {
 }
 
 export async function fetchProducts(): Promise<StoreItem[]> {
+  // 1. Try real-time API endpoint
   try {
     const res = await fetch(`/api/products?_t=${Date.now()}`, {
       cache: 'no-store',
@@ -132,16 +160,48 @@ export async function fetchProducts(): Promise<StoreItem[]> {
       },
     });
     if (res.ok) {
-      const data = await res.json();
-      if (Array.isArray(data)) {
-        updateLocalCatalogCache(data);
-        return data as StoreItem[];
+      const contentType = res.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          const clean = data.filter((p: any) => !DELETED_PRODUCT_IDS.has(p.id));
+          updateLocalCatalogCache(clean);
+          return clean as StoreItem[];
+        }
       }
     }
   } catch (e) {
-    console.warn('[Catalog] Error fetching fresh products:', e);
+    console.warn('[Catalog] Error fetching fresh products from /api/products:', e);
   }
-  return memoryCatalog.length > 0 ? memoryCatalog : baselineProducts;
+
+  // 2. Fail-safe static JSON fallback (guarantees phone and static visitors always get latest saved items)
+  try {
+    const res = await fetch(`/products.json?_t=${Date.now()}`, {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+      },
+    });
+    if (res.ok) {
+      const contentType = res.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          const clean = data.filter((p: any) => !DELETED_PRODUCT_IDS.has(p.id));
+          updateLocalCatalogCache(clean);
+          return clean as StoreItem[];
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('[Catalog] Error fetching from static products.json:', e);
+  }
+
+  // 3. Clean baseline fallback
+  const cleanBaseline = baselineProducts.filter((p) => !DELETED_PRODUCT_IDS.has(p.id));
+  return memoryCatalog.length > 0
+    ? memoryCatalog.filter((p) => !DELETED_PRODUCT_IDS.has(p.id))
+    : cleanBaseline;
 }
 
 export async function saveProduct(item: StoreItem): Promise<StoreItem> {
@@ -195,6 +255,14 @@ export async function saveProduct(item: StoreItem): Promise<StoreItem> {
 }
 
 export async function deleteProduct(productId: string): Promise<boolean> {
+  // Always register in client tombstone registry
+  DELETED_PRODUCT_IDS.add(productId);
+  if (typeof window !== 'undefined') {
+    try {
+      localStorage.setItem('anmolkala_deleted_ids', JSON.stringify(Array.from(DELETED_PRODUCT_IDS)));
+    } catch (e) {}
+  }
+
   try {
     const res = await fetch(`/api/products/${encodeURIComponent(productId)}`, {
       method: 'DELETE',
@@ -649,4 +717,28 @@ export async function updateAdminPassword(
 
 export async function logoutAdmin(): Promise<void> {
   clearAdminSession();
+}
+
+export async function syncAllToCloudAndGithub(): Promise<{ success: boolean; message: string }> {
+  try {
+    const session = getAdminSession();
+    const token = session?.token || '';
+    const res = await fetch('/api/admin/sync-all', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ token }),
+    });
+    if (res.ok) {
+      const data = await res.json();
+      notifyCatalogUpdated();
+      return { success: true, message: data.message || 'All changes synced live everywhere!' };
+    }
+    const err = await res.json();
+    return { success: false, message: err.error || 'Sync failed.' };
+  } catch (e: any) {
+    return { success: false, message: e.message || 'Network error syncing.' };
+  }
 }

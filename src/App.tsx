@@ -30,6 +30,7 @@ import {
   cleanLegacyStorage,
   baselineProducts,
   catalogBroadcast,
+  DELETED_PRODUCT_IDS,
 } from './services/catalogService';
 
 const STORAGE_KEYS = {
@@ -118,18 +119,20 @@ export const App: React.FC = () => {
     loadStorage<string[]>(STORAGE_KEYS.RECENT, [])
   );
 
-  // Products initialized with cached catalog or baseline handcrafted catalog
+  // Products initialized with cached catalog or baseline handcrafted catalog (excluding deleted products)
   const [products, setProducts] = useState<StoreItem[]>(() => {
     if (typeof window !== 'undefined') {
       try {
-        const raw = localStorage.getItem('anmolkala_active_catalog');
+        const raw = localStorage.getItem('anmolkala_active_catalog_v4');
         if (raw) {
           const parsed = JSON.parse(raw);
-          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            return parsed.filter((p: any) => !DELETED_PRODUCT_IDS.has(p.id));
+          }
         }
       } catch (e) {}
     }
-    return baselineProducts;
+    return baselineProducts.filter((p) => !DELETED_PRODUCT_IDS.has(p.id));
   });
   const [dbCategories, setDbCategories] = useState<CategoryItem[]>([]);
   const [isCatalogLoading, setIsCatalogLoading] = useState<boolean>(false);
@@ -158,10 +161,10 @@ export const App: React.FC = () => {
     saveStorage(STORAGE_KEYS.RECENT, recentList);
   }, [recentList]);
 
-  // Authoritative catalogue: Derived from preserved handcrafted catalog
+  // Authoritative catalogue: Derived from preserved handcrafted catalog (strictly excluding deleted products)
   const allProducts: Product[] = useMemo(() => {
     return products
-      .filter((item) => (item.type || 'product') === 'product' && item.published !== false)
+      .filter((item) => (item.type || 'product') === 'product' && item.published !== false && !DELETED_PRODUCT_IDS.has(item.id))
       .map((item): Product => ({
         id: item.id,
         name: item.name,

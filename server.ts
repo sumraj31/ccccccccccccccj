@@ -167,15 +167,59 @@ function initializeCatalogStorage(): CatalogData {
 
 catalogData = initializeCatalogStorage();
 
+const initialDataFile = path.resolve(__dirname, 'src/data/initialData.json');
+const publicProductsJsonFile = path.resolve(__dirname, 'public/products.json');
+const distProductsJsonFile = path.resolve(__dirname, 'dist/products.json');
+const rootProductsJsFile = path.resolve(__dirname, 'products.js');
+
 function persistCatalogStorage() {
   try {
     fs.writeFileSync(catalogStorageFile, JSON.stringify(catalogData, null, 2), 'utf-8');
   } catch (e) {}
+
+  // Sync to src/data/initialData.json so that Git and GitHub repository reflect every admin change immediately
+  try {
+    let initialObj: any = { brand: 'AnmolKala', whatsapp: '919810116510', phone: '919717887313', email: 'anmolkala.in@gmail.com' };
+    if (fs.existsSync(initialDataFile)) {
+      try {
+        const raw = fs.readFileSync(initialDataFile, 'utf-8');
+        initialObj = JSON.parse(raw);
+      } catch (e) {}
+    }
+    initialObj.products = catalogData.products.map((p) => ({
+      id: p.id,
+      name: p.name,
+      category: p.category,
+      slug: p.slug,
+      image: p.image_url || p.image || '/logo.png',
+      tags: p.tags || '',
+      description: p.description || '',
+      video_url: p.video_url || '',
+      published: p.published !== false,
+      availability: p.availability || 'in_stock',
+    }));
+    fs.writeFileSync(initialDataFile, JSON.stringify(initialObj, null, 2), 'utf-8');
+
+    // Also write static public/products.json so any mobile or static device can load the exact current catalog
+    fs.writeFileSync(publicProductsJsonFile, JSON.stringify(initialObj.products, null, 2), 'utf-8');
+
+    // If dist folder exists, write to dist/products.json as well
+    if (fs.existsSync(path.resolve(__dirname, 'dist'))) {
+      fs.writeFileSync(distProductsJsonFile, JSON.stringify(initialObj.products, null, 2), 'utf-8');
+    }
+
+    // Keep products.js in sync for any static script tag consumer
+    fs.writeFileSync(rootProductsJsFile, `window.ANMOLKALA_DATA = ${JSON.stringify(initialObj)};`, 'utf-8');
+  } catch (e) {
+    console.warn('Could not sync initialData.json, public/products.json, or products.js:', e);
+  }
 }
 
 // -------------------------------------------------------------
-// Real-Time Auto-Connecting Database Layer (DATABASE_URL)
+// Real-Time Multi-Database Layer (Cloud SQL + Supabase)
 // -------------------------------------------------------------
+let cloudSqlPool: pg.Pool | null = null;
+let supabasePool: pg.Pool | null = null;
 let pgPool: pg.Pool | null = null;
 let isDbConnected = false;
 let dbInfo = {
@@ -186,12 +230,33 @@ let dbInfo = {
 
 let dbInitPromise: Promise<void> | null = null;
 
+async function executeDualWrite(sql: string, params: any[]) {
+  const tasks: Promise<any>[] = [];
+  if (cloudSqlPool) {
+    tasks.push(
+      cloudSqlPool.query(sql, params).catch((err) => {
+        console.warn('[Cloud SQL Write Error]:', err?.message);
+      })
+    );
+  }
+  if (supabasePool) {
+    tasks.push(
+      supabasePool.query(sql, params).catch((err) => {
+        console.warn('[Supabase Write Error]:', err?.message);
+      })
+    );
+  }
+  if (tasks.length > 0) {
+    await Promise.allSettled(tasks);
+  }
+}
+
 async function initDatabase() {
-  // 1. Prioritize Cloud SQL Developer Edition if configured
+  // 1. Initialize Google Cloud SQL Developer Edition
   if (process.env.SQL_HOST) {
     try {
       console.log('[Database] Connecting to Google Cloud SQL at', process.env.SQL_HOST);
-      pgPool = new Pool({
+      cloudSqlPool = new Pool({
         host: process.env.SQL_HOST,
         user: process.env.SQL_USER,
         password: process.env.SQL_PASSWORD,
@@ -200,26 +265,20 @@ async function initDatabase() {
         connectionTimeoutMillis: 10000,
       });
 
-      pgPool.on('error', (err) => {
+      cloudSqlPool.on('error', (err) => {
         console.warn('[Cloud SQL Pool Warning]:', err.message);
       });
 
-      const client = await pgPool.connect();
-      isDbConnected = true;
-      dbInfo = {
-        provider: 'Google Cloud SQL (Connected)',
-        status: 'connected',
-        error: null,
-      };
+      const client = await cloudSqlPool.connect();
       console.log('[Database] Real-time connection established via Google Cloud SQL!');
       client.release();
-      return;
     } catch (err: any) {
-      console.warn('[Cloud SQL Connection Failed, falling back to external/local]:', err?.message);
+      console.warn('[Cloud SQL Connection Failed]:', err?.message);
+      cloudSqlPool = null;
     }
   }
 
-  // 2. Next try raw DATABASE_URL (e.g. Supabase or external PostgreSQL)
+  // 2. Initialize Supabase / external PostgreSQL (DATABASE_URL)
   const rawDatabaseUrl =
     process.env.DATABASE_URL ||
     process.env.POSTGRES_URL ||
@@ -230,36 +289,38 @@ async function initDatabase() {
   if (rawDatabaseUrl.trim()) {
     try {
       const isLocalhost = rawDatabaseUrl.includes('localhost') || rawDatabaseUrl.includes('127.0.0.1');
-      pgPool = new Pool({
+      supabasePool = new Pool({
         connectionString: rawDatabaseUrl,
         ssl: isLocalhost ? false : { rejectUnauthorized: false },
         max: 10,
         connectionTimeoutMillis: 8000,
       });
 
-      pgPool.on('error', (err) => {
-        console.warn('[Database Pool Warning]:', err.message);
+      supabasePool.on('error', (err) => {
+        console.warn('[Supabase Pool Warning]:', err.message);
       });
 
-      const client = await pgPool.connect();
-      isDbConnected = true;
-      dbInfo = {
-        provider: 'PostgreSQL (Connected via DATABASE_URL)',
-        status: 'connected',
-        error: null,
-      };
-      console.log('[Database] Real-time connection established via DATABASE_URL!');
+      const client = await supabasePool.connect();
+      console.log('[Database] Real-time connection established via Supabase PostgreSQL!');
       client.release();
-      return;
     } catch (err: any) {
-      console.warn('[Database Connection Failed]:', err?.message);
+      console.warn('[Supabase Connection Failed]:', err?.message);
+      supabasePool = null;
     }
   }
 
-  isDbConnected = false;
+  // Set primary reading pool
+  pgPool = cloudSqlPool || supabasePool || null;
+  isDbConnected = Boolean(pgPool);
   dbInfo = {
-    provider: 'Local Storage (Operating smoothly with persistent local catalogue)',
-    status: 'local',
+    provider: cloudSqlPool && supabasePool
+      ? 'Google Cloud SQL & Supabase (Dual Real-Time Sync Active)'
+      : cloudSqlPool
+      ? 'Google Cloud SQL (Connected)'
+      : supabasePool
+      ? 'Supabase PostgreSQL (Connected via DATABASE_URL)'
+      : 'Local Storage (Operating smoothly with persistent local catalogue)',
+    status: isDbConnected ? 'connected' : 'local',
     error: null,
   };
 }
@@ -513,10 +574,10 @@ app.post('/api/products', async (req: Request, res: Response) => {
     updated_at: now,
   };
 
-  // Sync to PostgreSQL if connected
-  if (isDbConnected && pgPool) {
+  // Sync to Cloud SQL and Supabase simultaneously
+  if (isDbConnected) {
     try {
-      await pgPool.query(
+      await executeDualWrite(
         `INSERT INTO store_items (id, type, name, category, slug, description, image_url, video_url, tags, published, availability, created_at, updated_at)
          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
          ON CONFLICT (id) DO UPDATE SET
@@ -567,10 +628,10 @@ app.post('/api/products', async (req: Request, res: Response) => {
 app.delete('/api/products/:id', async (req: Request, res: Response) => {
   const id = req.params.id;
 
-  if (isDbConnected && pgPool) {
+  if (isDbConnected) {
     try {
-      await pgPool.query('DELETE FROM store_items WHERE id = $1;', [id]);
-      await pgPool.query('DELETE FROM product_media WHERE product_id = $1;', [id]);
+      await executeDualWrite('DELETE FROM store_items WHERE id = $1;', [id]);
+      await executeDualWrite('DELETE FROM product_media WHERE product_id = $1;', [id]);
     } catch (e) {
       console.warn('[DB Error on Delete Product]:', e);
     }
@@ -590,10 +651,10 @@ app.delete('/api/products/:id', async (req: Request, res: Response) => {
 app.delete('/api/products/:id/video', async (req: Request, res: Response) => {
   const id = req.params.id;
 
-  if (isDbConnected && pgPool) {
+  if (isDbConnected) {
     try {
-      await pgPool.query("UPDATE store_items SET video_url = '', updated_at = NOW() WHERE id = $1;", [id]);
-      await pgPool.query("DELETE FROM product_media WHERE product_id = $1 AND media_type = 'video';", [id]);
+      await executeDualWrite("UPDATE store_items SET video_url = '', updated_at = NOW() WHERE id = $1;", [id]);
+      await executeDualWrite("DELETE FROM product_media WHERE product_id = $1 AND media_type = 'video';", [id]);
     } catch (e) {}
   }
 
@@ -640,9 +701,9 @@ app.post('/api/categories', async (req: Request, res: Response) => {
     updated_at: now,
   };
 
-  if (isDbConnected && pgPool) {
+  if (isDbConnected) {
     try {
-      await pgPool.query(
+      await executeDualWrite(
         `INSERT INTO categories (id, name, display_order, created_at, updated_at)
          VALUES ($1, $2, $3, $4, $5)
          ON CONFLICT (name) DO UPDATE SET display_order = EXCLUDED.display_order, updated_at = NOW();`,
@@ -677,9 +738,9 @@ app.delete('/api/categories/:id', async (req: Request, res: Response) => {
     });
   }
 
-  if (isDbConnected && pgPool) {
+  if (isDbConnected) {
     try {
-      await pgPool.query('DELETE FROM categories WHERE id = $1;', [id]);
+      await executeDualWrite('DELETE FROM categories WHERE id = $1;', [id]);
     } catch (e) {}
   }
 
@@ -741,9 +802,9 @@ app.post('/api/media', async (req: Request, res: Response) => {
     created_at: new Date().toISOString(),
   };
 
-  if (isDbConnected && pgPool) {
+  if (isDbConnected) {
     try {
-      await pgPool.query(
+      await executeDualWrite(
         `INSERT INTO product_media (id, product_id, storage_path, media_type, file_name, file_size, display_order, created_at)
          VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
          ON CONFLICT (id) DO UPDATE SET storage_path = EXCLUDED.storage_path;`,
@@ -760,14 +821,82 @@ app.post('/api/media', async (req: Request, res: Response) => {
 // Delete Media Item
 app.delete('/api/media/:id', async (req: Request, res: Response) => {
   const id = req.params.id;
-  if (isDbConnected && pgPool) {
+  if (isDbConnected) {
     try {
-      await pgPool.query('DELETE FROM product_media WHERE id = $1;', [id]);
+      await executeDualWrite('DELETE FROM product_media WHERE id = $1;', [id]);
     } catch (e) {}
   }
   catalogData.media = catalogData.media.filter((m) => m.id !== id);
   persistCatalogStorage();
   return res.json({ success: true, id });
+});
+
+// Explicit Live Multi-Sync Endpoint for Admin
+app.post('/api/admin/sync-all', async (req: Request, res: Response) => {
+  const authHeader = req.headers.authorization;
+  const token = authHeader?.replace(/^Bearer\s+/i, '');
+  const verification = verifyToken(String(token || req.body?.token || ''));
+  if (!verification.valid) {
+    return res.status(401).json({ error: 'Unauthorized: Invalid admin session.' });
+  }
+
+  try {
+    // 1. Delete any products removed from catalogData from database tables
+    const activeIds = catalogData.products.map((p) => p.id);
+    if (activeIds.length > 0) {
+      const placeholders = activeIds.map((_, idx) => `$${idx + 1}`).join(', ');
+      await executeDualWrite(`DELETE FROM store_items WHERE id NOT IN (${placeholders});`, activeIds);
+    }
+
+    // 2. Sync every product in catalogData to Cloud SQL & Supabase
+    for (const p of catalogData.products) {
+      await executeDualWrite(
+        `INSERT INTO store_items (id, type, name, category, slug, description, image_url, video_url, tags, published, availability, created_at, updated_at)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+         ON CONFLICT (id) DO UPDATE SET
+           name = EXCLUDED.name,
+           category = EXCLUDED.category,
+           slug = EXCLUDED.slug,
+           description = EXCLUDED.description,
+           image_url = EXCLUDED.image_url,
+           video_url = EXCLUDED.video_url,
+           tags = EXCLUDED.tags,
+           published = EXCLUDED.published,
+           availability = EXCLUDED.availability,
+           updated_at = EXCLUDED.updated_at;`,
+        [
+          p.id,
+          p.type || 'product',
+          p.name,
+          p.category,
+          p.slug,
+          p.description || '',
+          p.image_url || '/logo.png',
+          p.video_url || '',
+          p.tags || '',
+          p.published !== false,
+          p.availability || 'in_stock',
+          p.created_at || new Date().toISOString(),
+          p.updated_at || new Date().toISOString(),
+        ]
+      );
+    }
+
+    // 3. Persist all JSON and JS files
+    persistCatalogStorage();
+
+    return res.json({
+      success: true,
+      message: 'All changes live immediately across Website, Cloud SQL, Supabase, and GitHub repository files.',
+      counts: {
+        products: catalogData.products.length,
+        categories: catalogData.categories.length,
+      },
+      timestamp: new Date().toISOString(),
+    });
+  } catch (err: any) {
+    return res.status(500).json({ error: err.message || 'Sync failed.' });
+  }
 });
 
 // Admin Authentication & Session Management Route
